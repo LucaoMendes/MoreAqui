@@ -3,4 +3,6 @@
     <dimen name="distanciaEntreBotoes">20dp</dimen>
     <dimen name="distanciaBotoesLogo">80dp</dimen>
     <dimen name="distanciaLogoTop">50dp</dimen>
+    <dimen name="wBtn">190dp</dimen>
+    <dimen name="hBtn">40dp</dimen>
 </resources>

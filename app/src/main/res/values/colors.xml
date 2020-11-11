@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="azulPrimario">#00AAB1</color>
     <color name="azulSecundario">#63FAFF</color>
-    <color name="azulTerciario">#46EDF2</color>
-    <color name="marromPrimario">#A6490F</color>
-    <color name="marromSecundario">#F28946</color>
     <color name="branco">#FFF</color>
 
     <color name="backgroundColor">@color/azulPrimario</color>

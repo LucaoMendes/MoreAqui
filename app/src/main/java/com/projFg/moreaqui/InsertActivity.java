@@ -10,11 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Switch;
 import android.widget.Toast;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.projFg.moreaqui.model.ImovelModel;
 
 public class InsertActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class InsertActivity extends AppCompatActivity {
     RadioGroup tiposDeImovel,tamanhosDeImovel;
     Button btnSalvar;
     RadioButton tipoMarcado,tamanhoMarcado;
-    Switch emConstrucao;
+    SwitchMaterial emConstrucao;
     ImovelModel imovel;
     FloatingActionButton fabVoltar;
 
@@ -39,7 +39,7 @@ public class InsertActivity extends AppCompatActivity {
         tiposDeImovel = (RadioGroup) findViewById(R.id.opt_tipos);
         btnSalvar = (Button) findViewById(R.id.btn_salvar);
         tamanhosDeImovel = (RadioGroup) findViewById(R.id.opt_tamanhos);
-        emConstrucao = (Switch) findViewById(R.id.sw_construcao);
+        emConstrucao = (SwitchMaterial) findViewById(R.id.sw_construcao);
         fabVoltar = (FloatingActionButton) findViewById(R.id.fab_voltar);
 
         tiposDeImovel.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
