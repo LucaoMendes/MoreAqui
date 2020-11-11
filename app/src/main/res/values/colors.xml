@@ -14,7 +14,7 @@
     <!--
     Estilização dos Botões
         -->
-    <color name="corBotao">@color/marromSecundario</color>
+    <color name="corBotao">@color/azulSecundario</color>
     <color name="corTextoBotao">#000</color>
 
 

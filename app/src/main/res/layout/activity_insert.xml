@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    android:isScrollContainer="true"
+    android:isScrollContainer="false"
     tools:context=".InsertActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -29,6 +29,7 @@
         android:layout_width="98dp"
         android:layout_height="94dp"
         android:layout_marginTop="@dimen/distanciaLogoTop"
+        android:contentDescription="@string/txt_logo"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -40,6 +41,8 @@
         android:layout_width="289dp"
         android:layout_height="52dp"
         android:ems="10"
+        android:fontFamily="@font/samsungsans"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:text="@string/txt_telefone"
         android:textColor="@color/corTextBox"
@@ -60,6 +63,7 @@
             android:id="@+id/opt_casa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tipoCasa"
             android:textColor="@color/textoPrimario" />
 
@@ -67,6 +71,7 @@
             android:id="@+id/opt_apartamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tipoApartamento"
             android:textColor="@color/textoPrimario" />
 
@@ -74,6 +79,7 @@
             android:id="@+id/opt_loja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tipoLoja"
             android:textColor="@color/textoPrimario" />
 
@@ -81,6 +87,7 @@
             android:id="@+id/opt_naosei0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tipoNaoSei"
             android:textColor="@color/textoPrimario" />
     </RadioGroup>
@@ -90,6 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/samsungsans"
         android:text="@string/txt_tipo"
         android:textColor="@color/textoSecundario"
         app:layout_constraintStart_toStartOf="@+id/txt_telefone"
@@ -107,6 +115,7 @@
             android:id="@+id/opt_pequeno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tamanhoP"
             android:textColor="@color/textoPrimario" />
 
@@ -114,6 +123,7 @@
             android:id="@+id/opt_medio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tamanhoM"
             android:textColor="@color/textoPrimario" />
 
@@ -121,6 +131,7 @@
             android:id="@+id/opt_grande"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tamanhoG"
             android:textColor="@color/textoPrimario" />
 
@@ -128,6 +139,7 @@
             android:id="@+id/opt_naosei1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/samsungsans"
             android:text="@string/txt_tamanhoNaoSei"
             android:textColor="@color/textoPrimario" />
 
@@ -138,11 +150,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/samsungsans"
         android:text="@string/txt_tamanho"
         android:textColor="@color/textoSecundario"
         app:layout_constraintEnd_toEndOf="@+id/txt_telefone"
-        app:layout_constraintHorizontal_bias="0.853"
-        app:layout_constraintStart_toEndOf="@+id/txt_tipo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/opt_tamanhos"
         app:layout_constraintTop_toBottomOf="@+id/txt_telefone" />
 
     <Switch
@@ -153,7 +166,8 @@
         android:text="@string/txt_construcao"
         android:textColor="@color/textoPrimario"
         app:layout_constraintStart_toStartOf="@+id/txt_telefone"
-        app:layout_constraintTop_toBottomOf="@+id/opt_tipos" />
+        app:layout_constraintTop_toBottomOf="@+id/opt_tipos"
+        android:fontFamily="@font/samsungsans" />
 
     <Button
         android:id="@+id/btn_salvar"
@@ -162,6 +176,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:background="@color/corBotao"
+        android:fontFamily="@font/samsungsans"
         android:text="@string/btn_salvar"
         android:textColor="@color/corTextoBotao"
         app:layout_constraintEnd_toEndOf="parent"
@@ -174,10 +189,12 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
+        android:background="@color/corBotao"
         android:backgroundTint="@color/azulSecundario"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
