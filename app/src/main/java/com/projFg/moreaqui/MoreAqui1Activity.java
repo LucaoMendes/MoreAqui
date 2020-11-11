@@ -31,6 +31,7 @@ public class MoreAqui1Activity extends AppCompatActivity {
                 Intent i = new Intent(MoreAqui1Activity.this,
                         InsertActivity.class);
                 startActivity(i);
+                finishAffinity();
             }
         });
     }

@@ -2,6 +2,7 @@ package com.projFg.moreaqui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,18 +14,23 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.projFg.moreaqui.model.ImovelModel;
 
 public class InsertActivity extends AppCompatActivity {
     EditText txtTelefone;
-    RadioGroup tiposDeImovel;
-    RadioGroup tamanhosDeImovel;
+    RadioGroup tiposDeImovel,tamanhosDeImovel;
     Button btnSalvar;
-    RadioButton tipoMarcado;
-    RadioButton tamanhoMarcado;
+    RadioButton tipoMarcado,tamanhoMarcado;
     Switch emConstrucao;
     ImovelModel imovel;
+    FloatingActionButton fabVoltar;
 
+    @Override
+    public void onBackPressed(){ //Botão BACK padrão do android
+        startActivity(new Intent(this, MoreAqui1Activity.class));
+        finishAffinity();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,7 @@ public class InsertActivity extends AppCompatActivity {
         btnSalvar = (Button) findViewById(R.id.btn_salvar);
         tamanhosDeImovel = (RadioGroup) findViewById(R.id.opt_tamanhos);
         emConstrucao = (Switch) findViewById(R.id.sw_construcao);
+        fabVoltar = (FloatingActionButton) findViewById(R.id.fab_voltar);
 
         tiposDeImovel.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -48,6 +55,13 @@ public class InsertActivity extends AppCompatActivity {
             }
         });
 
+        fabVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(InsertActivity.this, MoreAqui1Activity.class));
+                finishAffinity();
+            }
+        });
 
         txtTelefone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
