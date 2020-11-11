@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".InsertActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="98dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="@dimen/distanciaLogoTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/txt_telefone"
+        android:layout_width="289dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txt_telefone"
+        android:textColor="@color/corTextBox"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <RadioGroup
+        android:id="@+id/opt_tipos"
+        android:layout_width="128dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/txt_telefone"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tipo">
+
+        <RadioButton
+            android:id="@+id/opt_casa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tipoCasa"
+            android:textColor="@color/textoPrimario" />
+
+        <RadioButton
+            android:id="@+id/opt_apartamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tipoApartamento"
+            android:textColor="@color/textoPrimario" />
+
+        <RadioButton
+            android:id="@+id/opt_loja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tipoLoja"
+            android:textColor="@color/textoPrimario" />
+
+        <RadioButton
+            android:id="@+id/opt_naosei0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tipoNaoSei"
+            android:textColor="@color/textoPrimario" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/txt_tipo"
+        android:textColor="@color/textoSecundario"
+        app:layout_constraintStart_toStartOf="@+id/txt_telefone"
+        app:layout_constraintTop_toBottomOf="@+id/txt_telefone" />
+
+    <RadioGroup
+        android:id="@+id/opt_tamanhos"
+        android:layout_width="117dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/txt_telefone"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tamanho">
+
+        <RadioButton
+            android:id="@+id/opt_pequeno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tamanhoP"
+            android:textColor="@color/textoPrimario" />
+
+        <RadioButton
+            android:id="@+id/opt_medio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tamanhoM"
+            android:textColor="@color/textoPrimario" />
+
+        <RadioButton
+            android:id="@+id/opt_grande"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tamanhoG"
+            android:textColor="@color/textoPrimario" />
+
+        <RadioButton
+            android:id="@+id/opt_naosei1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_tamanhoNaoSei"
+            android:textColor="@color/textoPrimario" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_tamanho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/txt_tamanho"
+        android:textColor="@color/textoSecundario"
+        app:layout_constraintEnd_toEndOf="@+id/txt_telefone"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toEndOf="@+id/txt_tipo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_telefone" />
+
+    <Switch
+        android:id="@+id/sw_construcao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/txt_construcao"
+        android:textColor="@color/textoPrimario"
+        app:layout_constraintStart_toStartOf="@+id/txt_telefone"
+        app:layout_constraintTop_toBottomOf="@+id/opt_tipos" />
+
+    <Button
+        android:id="@+id/btn_salvar"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/corBotao"
+        android:text="@string/btn_salvar"
+        android:textColor="@color/corTextoBotao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw_construcao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

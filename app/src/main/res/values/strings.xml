@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">MoreAqui</string>
+    <string name="btn_novo">Novo</string>
+    <string name="btn_procurar">Procurar</string>
+    <string name="btn_mapa">Mapa</string>
+    <string name="txt_telefone">Telefone</string>
+
+    <string name="txt_tipo">Tipo:</string>
+    <string name="txt_tipoCasa">Casa</string>
+    <string name="txt_tipoApartamento">Apartamento</string>
+    <string name="txt_tipoLoja">Loja</string>
+    <string name="txt_tipoNaoSei">Não Sei</string>
+
+    <string name="txt_tamanho">Tamanho:</string>
+    <string name="txt_tamanhoP">Pequeno</string>
+    <string name="txt_tamanhoM">Médio</string>
+    <string name="txt_tamanhoG">Grande</string>
+    <string name="txt_tamanhoNaoSei">@string/txt_tipoNaoSei</string>
+
+    <string name="txt_construcao">Em Construção</string>
+
+    <string name="btn_salvar">Salvar</string>
+
+
+    <string name="txt_infoInserida">As informações foram inseridas com sucesso!</string>
+    <string name="txt_erroInfoInvalida">Número de telefone possui formato invalido!</string>
+    <string name="txt_erroFaltaInformacoes">Você precisa preencher o formulário completo</string>
 </resources>

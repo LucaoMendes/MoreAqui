@@ -2,13 +2,36 @@ package com.projFg.moreaqui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MoreAqui1Activity extends AppCompatActivity {
+    Button btnNovo;
+    Button btnProcurar;
+    Button btnMapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moreaqui1);
+        btnNovo = (Button) findViewById(R.id.btn_novo);
+        btnProcurar = (Button) findViewById(R.id.btn_procurar);
+        btnMapa = (Button) findViewById(R.id.btn_mapa);
+
+
+
+
+
+        btnNovo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(MoreAqui1Activity.this,
+                        InsertActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

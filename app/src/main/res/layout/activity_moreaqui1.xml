@@ -4,16 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azulPrimario"
+    android:background="@color/backgroundColor"
     tools:context=".MoreAqui1Activity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/distanciaLogoTop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btn_novo"
+        android:layout_width="191dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/distanciaBotoesLogo"
+        android:background="@color/corBotao"
+        android:text="@string/btn_novo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <Button
+        android:id="@+id/btn_procurar"
+        android:layout_width="191dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/distanciaEntreBotoes"
+        android:background="@color/corBotao"
+        android:text="@string/btn_procurar"
+        android:textColor="@color/corTextoBotao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_novo" />
+
+    <Button
+        android:id="@+id/btn_mapa"
+        android:layout_width="191dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="@dimen/distanciaEntreBotoes"
+        android:background="@color/corBotao"
+        android:text="@string/btn_mapa"
+        android:textColor="@color/corTextoBotao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_procurar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
