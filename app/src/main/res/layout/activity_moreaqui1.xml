@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="@color/fundoTela"
     tools:context=".MoreAqui1Activity">
 
     <ImageView
@@ -23,47 +23,45 @@
 
     <Button
         android:id="@+id/btn_novo"
-        style="@android:style/Widget.Button"
         android:layout_width="@dimen/wBtn"
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaBotoesLogo"
-        android:background="@color/corBotao"
-        android:drawableEnd="@drawable/add"
+        android:backgroundTint="@color/corBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_novo"
-        android:textSize="18sp"
+        android:textSize="15sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/add"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <Button
         android:id="@+id/btn_procurar"
-        style="@android:style/Widget.Button"
         android:layout_width="@dimen/wBtn"
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaEntreBotoes"
-        android:background="@color/corBotao"
-        android:drawableEnd="@drawable/search"
+        android:backgroundTint="@color/corBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_procurar"
-        android:textColor="@color/corTextoBotao"
-        android:textSize="18sp"
+        android:textSize="15sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/search"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btn_novo" />
 
     <Button
         android:id="@+id/btn_mapa"
-        style="@android:style/Widget.Button"
         android:layout_width="@dimen/wBtn"
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaEntreBotoes"
-        android:background="@color/corBotao"
-        android:drawableEnd="@drawable/map"
+        android:backgroundTint="@color/corBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_mapa"
-        android:textColor="@color/corTextoBotao"
-        android:textSize="18sp"
+        android:textSize="15sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/map"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btn_procurar" />

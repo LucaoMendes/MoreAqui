@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#607D8B</color>
     <color name="azulPrimario">#00AAB1</color>
-    <color name="azulSecundario">#63FAFF</color>
+    <color name="azulSecundario">#0097A7</color>
     <color name="branco">#FFF</color>
 
-    <color name="backgroundColor">@color/azulPrimario</color>
+    <color name="fundoTela">@color/azulPrimario</color>
     <!--
     Estilização dos Botões
         -->
-    <color name="corBotao">@color/azulSecundario</color>
-    <color name="corTextoBotao">#000</color>
+    <color name="corBotao">#607D8B</color>
+    <color name="corTextoBotao">@color/branco</color>
 
 
 
