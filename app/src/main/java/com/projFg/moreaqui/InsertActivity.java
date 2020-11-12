@@ -2,18 +2,20 @@ package com.projFg.moreaqui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.projFg.moreaqui.model.ImovelModel;
 
@@ -80,7 +82,7 @@ public class InsertActivity extends AppCompatActivity {
                 try {
                     int telefone = Integer.parseInt(txtTelefone.getText().toString());
                     if (tipoMarcado == null || tamanhoMarcado == null){
-                        Toast.makeText(InsertActivity.this, getString(R.string.txt_erroFaltaInformacoes), Toast.LENGTH_SHORT).show();
+                        Snackbar.make(v,R.string.txt_erroFaltaInformacoes,Snackbar.LENGTH_SHORT).show();
                     }else {
                         imovel = new ImovelModel(
                                 telefone,
@@ -88,7 +90,12 @@ public class InsertActivity extends AppCompatActivity {
                                 tamanhoMarcado.getText().toString(),
                                 emConstrucao.isChecked());
                         Log.v("New",imovel.toString());
-                        Toast.makeText(InsertActivity.this, getString(R.string.txt_infoInserida), Toast.LENGTH_SHORT).show();
+
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+
+                        Snackbar.make(v,R.string.txt_infoInserida,Snackbar.LENGTH_SHORT).show();
+
                     }
 
 
@@ -96,7 +103,8 @@ public class InsertActivity extends AppCompatActivity {
 
                 }catch(Exception e){
                     Log.v("DEBUG","Exception -> "+e.toString()); //Debug de codigo via logCat
-                    Toast.makeText(InsertActivity.this, getString(R.string.txt_erroInfoInvalida), Toast.LENGTH_SHORT).show();
+                    Snackbar.make(v,R.string.txt_erroInfoInvalida,Snackbar.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -117,7 +125,6 @@ public class InsertActivity extends AppCompatActivity {
                 }
             }
         });
-
 
 
     }
