@@ -32,7 +32,7 @@ public class InsertActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(this, MoreAqui1Activity.class));
+        startActivity(new Intent(this, MoreAqui2Activity.class));
         finishAffinity();
     }
     @Override
@@ -73,7 +73,7 @@ public class InsertActivity extends AppCompatActivity {
         fabVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(InsertActivity.this, MoreAqui1Activity.class));
+                startActivity(new Intent(InsertActivity.this, MoreAqui2Activity.class));
                 finishAffinity();
             }
         });

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MoreAqui1Activity extends AppCompatActivity {
+public class MoreAqui2Activity extends AppCompatActivity {
     Button btnNovo;
     Button btnProcurar;
     Button btnMapa;
@@ -15,7 +15,7 @@ public class MoreAqui1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_moreaqui1);
+        setContentView(R.layout.activity_moreaqui2);
 
         /*
         * Instanciando variaveis
@@ -32,7 +32,7 @@ public class MoreAqui1Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MoreAqui1Activity.this,
+                Intent i = new Intent(MoreAqui2Activity.this,
                         InsertActivity.class);
                 startActivity(i);
                 finishAffinity();
