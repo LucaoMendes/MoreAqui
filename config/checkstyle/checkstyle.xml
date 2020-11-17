@@ -7,5 +7,6 @@
     <module name="TreeWalker">
         <module name="GenericWhitespace" />
     </module>
+    <module name="AnnotationLocation"/>
 
 </module>

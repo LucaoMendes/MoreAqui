@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundoTela"
     android:isScrollContainer="false"
     tools:context=".InsertActivity">
 
@@ -198,6 +197,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/retorno"
-        app:tint="@color/branco" /> />
+        app:tint="@color/branco" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

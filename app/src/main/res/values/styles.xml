@@ -6,7 +6,7 @@
         <item name="colorPrimaryDark">@color/azulSecundario</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/azulPrimario</item>
-        <item name="android:colorBackground">@color/azulPrimario</item>
+        <item name="android:colorBackground">@color/fundoTela</item>
     </style>
 
 </resources>

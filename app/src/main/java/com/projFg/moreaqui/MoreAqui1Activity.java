@@ -16,6 +16,10 @@ public class MoreAqui1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moreaqui1);
+
+        /*
+        * Instanciando variaveis
+        */
         btnNovo = (Button) findViewById(R.id.btn_novo);
         btnProcurar = (Button) findViewById(R.id.btn_procurar);
         btnMapa = (Button) findViewById(R.id.btn_mapa);
@@ -23,7 +27,7 @@ public class MoreAqui1Activity extends AppCompatActivity {
 
 
 
-
+        //onClick Listeners
         btnNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

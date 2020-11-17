@@ -17,6 +17,8 @@ import android.widget.RadioGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+
+//Classe Estate com as informações do imovel
 import com.projFg.moreaqui.model.ImovelModel;
 
 public class InsertActivity extends AppCompatActivity {
