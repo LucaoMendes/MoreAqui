@@ -10,12 +10,14 @@
         android:roundIcon="@mipmap/icon_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ShowActivity"></activity>
         <activity
             android:name=".InsertActivity"
             android:parentActivityName=".MoreAqui2Activity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".MoreAqui2Activity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".MoreAqui2Activity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
