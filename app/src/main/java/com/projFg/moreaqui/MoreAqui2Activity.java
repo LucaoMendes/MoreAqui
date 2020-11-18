@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MoreAqui2Activity extends AppCompatActivity {
     Button btnNovo;
-    Button btnProcurar;
+    Button btnVisualizar;
     Button btnMapa;
 
     @Override
@@ -21,7 +21,7 @@ public class MoreAqui2Activity extends AppCompatActivity {
         * Instanciando variaveis
         */
         btnNovo = (Button) findViewById(R.id.btn_novo);
-        btnProcurar = (Button) findViewById(R.id.btn_procurar);
+        btnVisualizar = (Button) findViewById(R.id.btn_visualizar);
         btnMapa = (Button) findViewById(R.id.btn_mapa);
 
 
@@ -38,5 +38,6 @@ public class MoreAqui2Activity extends AppCompatActivity {
                 finishAffinity();
             }
         });
+
     }
 }

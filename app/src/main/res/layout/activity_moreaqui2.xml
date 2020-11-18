@@ -36,13 +36,13 @@
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <Button
-        android:id="@+id/btn_procurar"
+        android:id="@+id/btn_visualizar"
         android:layout_width="@dimen/wBtn"
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaEntreBotoes"
         android:backgroundTint="@color/corBotao"
         android:fontFamily="@font/samsungsans"
-        android:text="@string/btn_procurar"
+        android:text="@string/btn_visualizar"
         android:textSize="15sp"
         app:cornerRadius="10dp"
         app:icon="@drawable/search"
@@ -63,7 +63,7 @@
         app:icon="@drawable/map"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/btn_procurar" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_visualizar" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
