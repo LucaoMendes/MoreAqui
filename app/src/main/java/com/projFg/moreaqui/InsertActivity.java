@@ -90,14 +90,17 @@ public class InsertActivity extends AppCompatActivity {
                         Snackbar.make(v,R.string.txt_erroFaltaInformacoes,Snackbar.LENGTH_SHORT).show();
                     }else {
                         imovel = new ImovelModel(
+                                null,
                                 telefone,
                                 tipoMarcado.getText().toString(),
                                 tamanhoMarcado.getText().toString(),
                                 emConstrucao.isChecked());
-                        Log.v("New",imovel.toString());
+
+                        //Log.v("New",imovel.toString());
+
                         Long id = imovelDAO.inserirImovel(imovel);
                         if(id != null){
-                            Log.v("Inserir Imovel","ID: "+id);
+                            //Log.v("DEBUG Inserir Imovel","ID: "+id);
                         }
 
 

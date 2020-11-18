@@ -9,6 +9,7 @@ import android.util.Log;
 import com.projFg.moreaqui.model.ImovelModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ImovelDAO {
     private SQLiteDatabase db;
@@ -21,43 +22,41 @@ public class ImovelDAO {
 
     public long inserirImovel(ImovelModel imovel){
         ContentValues im = new ContentValues();
+        im.put("PHONE",imovel.telefoneImovel);
         im.put("TYPE",imovel.tipoImovel);
         im.put("SIZE",imovel.tamanhoImovel);
-        im.put("STATUS",imovel.emConstrucaoImovel);
-        im.put("PHONE",imovel.telefoneImovel);
+        im.put("STATUS",imovel.emConstrucaoImovel.toString());
+
+        //Log.v("DEBUG DB INSERT",imovel.emConstrucaoImovel.toString());
         db = dataDb.getWritableDatabase();
         long id = db.insert(tabelaImoveis,null,im);
         db.close();
         return id;
     }
-    public ArrayList buscarImoveis(){
-        ArrayList<ImovelModel> list = new ArrayList<ImovelModel>();
-        String query = "SELECT * FROM "+ tabelaImoveis;
-        db = dataDb.getReadableDatabase();
-        try{
-            Cursor cursor = db.rawQuery(query,null);
-            try{
-                if(cursor.moveToFirst()){
-                    do{
-                        ImovelModel im = new ImovelModel(
-                                cursor.getInt(0),
-                                cursor.getString(1),
-                                cursor.getString(2),
-                                Boolean.parseBoolean(cursor.getString(3)));
-                        list.add(im);
-                    }while(cursor.moveToNext());
-                }
-            }finally {
-                try{cursor.close();}catch(Exception e){
-                    Log.v("DEBUG",e.toString());
-                }
-            }
-        }finally {
-            try{db.close();}catch(Exception e){
-                Log.v("DEBUG",e.toString());
-            }
+    public List<ImovelModel> buscarImoveis(){
+        List<ImovelModel> list = new ArrayList<ImovelModel>();
+        db = dataDb.getWritableDatabase();
+        String[] columns = new String[]{
+                "_ID", "PHONE", "TYPE", "SIZE", "STATUS"};
 
+        Cursor cursor = db.query(tabelaImoveis,columns,null,null,null,null,"_id");
+
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            ImovelModel im = new ImovelModel(
+                    cursor.getLong(0),
+                    cursor.getInt(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    Boolean.parseBoolean(cursor.getString(4))
+            );
+
+            //Log.v("DEBUG DB Busca",im.emConstrucaoImovel.toString());
+            list.add(im);
+            cursor.moveToNext();
         }
+        cursor.close();
+        db.close();
         return list;
     }
 

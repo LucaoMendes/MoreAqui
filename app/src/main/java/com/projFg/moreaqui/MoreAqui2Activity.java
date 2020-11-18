@@ -39,5 +39,15 @@ public class MoreAqui2Activity extends AppCompatActivity {
             }
         });
 
+        btnVisualizar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MoreAqui2Activity.this,
+                        ShowActivity.class);
+                startActivity(i);
+                finishAffinity();
+            }
+        });
+
     }
 }
