@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MoreAqui</string>
     <string name="btn_novo">Novo</string>
-    <string name="btn_procurar">Procurar</string>
+    <string name="btn_visualizar">Visualizar</string>
     <string name="btn_mapa">Mapa</string>
     <string name="txt_telefone">Telefone</string>
 
