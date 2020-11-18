@@ -19,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 //Classe Estate com as informações do imovel
+import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.model.ImovelModel;
 
 public class InsertActivity extends AppCompatActivity {
@@ -27,8 +28,9 @@ public class InsertActivity extends AppCompatActivity {
     Button btnSalvar;
     RadioButton tipoMarcado,tamanhoMarcado;
     SwitchMaterial emConstrucao;
-    ImovelModel imovel;
     FloatingActionButton fabVoltar;
+    ImovelModel imovel;
+    ImovelDAO imovelDAO;
 
     @Override
     public void onBackPressed(){
@@ -50,6 +52,7 @@ public class InsertActivity extends AppCompatActivity {
         tamanhosDeImovel = (RadioGroup) findViewById(R.id.opt_tamanhos);
         emConstrucao = (SwitchMaterial) findViewById(R.id.sw_construcao);
         fabVoltar = (FloatingActionButton) findViewById(R.id.fab_voltar);
+        imovelDAO = new ImovelDAO(this);
 
 
         //onChecked Listeners
@@ -92,6 +95,11 @@ public class InsertActivity extends AppCompatActivity {
                                 tamanhoMarcado.getText().toString(),
                                 emConstrucao.isChecked());
                         Log.v("New",imovel.toString());
+                        Long id = imovelDAO.inserirImovel(imovel);
+                        if(id != null){
+                            Log.v("Inserir Imovel","ID: "+id);
+                        }
+
 
                         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
