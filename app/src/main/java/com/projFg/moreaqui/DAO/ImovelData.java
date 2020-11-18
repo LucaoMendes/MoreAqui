@@ -15,7 +15,6 @@ public class ImovelData extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(scriptDelete);
         db.execSQL("CREATE TABLE "+ nomeTabelaImoveis +
                 " (_ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "PHONE TEXT NOT NULL," +

@@ -107,7 +107,11 @@ public class InsertActivity extends AppCompatActivity {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
 
-                        Snackbar.make(v,R.string.txt_infoInserida,Snackbar.LENGTH_SHORT).show();
+
+                        Intent i = new Intent(InsertActivity.this, ShowActivity.class);
+                        i.putExtra("insert",true);
+                        startActivity(i);
+                        finishAffinity();
 
                     }
 

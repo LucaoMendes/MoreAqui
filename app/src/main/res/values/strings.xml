@@ -5,6 +5,8 @@
     <string name="btn_mapa">Mapa</string>
     <string name="txt_telefone">Telefone</string>
 
+    <string name="txt_imovel">Imovel</string>
+
     <string name="txt_tipo">Tipo:</string>
     <string name="txt_tipoCasa">Casa</string>
     <string name="txt_tipoApartamento">Apartamento</string>
@@ -18,10 +20,10 @@
     <string name="txt_tamanhoNaoSei">@string/txt_tipoNaoSei</string>
 
     <string name="txt_construcao">Em Construção</string>
-
+    <string name="txt_pronto">Pronto</string>
     <string name="btn_salvar">Salvar</string>
 
-
+    <string name="txt_status">Status</string>
     <string name="txt_infoInserida">As informações foram inseridas com sucesso!</string>
     <string name="txt_erroInfoInvalida">Número de telefone possui formato invalido!</string>
     <string name="txt_erroFaltaInformacoes">Você precisa preencher o formulário completo</string>

@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.model.ImovelModel;
 
@@ -29,7 +31,11 @@ public class ShowActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
-
+        Intent i = getIntent();
+        View v = findViewById(android.R.id.content);
+        if(i.getBooleanExtra("insert",false)){
+            Snackbar.make(v,R.string.txt_infoInserida,Snackbar.LENGTH_SHORT).show();
+        }
 
         lista = new ArrayList<>();
         list_imoveis = findViewById(R.id.list_imoveis);
@@ -40,8 +46,12 @@ public class ShowActivity extends AppCompatActivity {
             //Log.v("DEBUG BD",lista.get(1).emConstrucaoImovel.toString());
 
             for (ImovelModel im:lista) {
-                String status = im.emConstrucaoImovel?"Em construção":"Pronto";
-                ImoveisRecebidos.add("Imovel:"+im.tipoImovel+", Tamanho:"+im.tamanhoImovel+ ", Contato:"+im.telefoneImovel +", Status:"+ status);
+                String status = im.emConstrucaoImovel?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
+                ImoveisRecebidos.add(
+                        getString(R.string.txt_imovel)+":"+im.tipoImovel+","+
+                        getString(R.string.txt_tamanho)+" "+im.tamanhoImovel+ ", "+
+                        getString(R.string.txt_telefone)+": "+im.telefoneImovel + ", "+
+                        getString(R.string.txt_status)+": "+status);
             }
             adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);
             list_imoveis.setAdapter(adapter);
