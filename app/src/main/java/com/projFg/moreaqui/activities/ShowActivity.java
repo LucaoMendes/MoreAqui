@@ -16,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.fragments.MenuFragment;
+import com.projFg.moreaqui.fragments.MenuImovelFragment;
 import com.projFg.moreaqui.model.ImovelModel;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class ShowActivity extends AppCompatActivity {
     List<ImovelModel> lista;
     ArrayAdapter<String> adapter;
     FloatingActionButton fabAdicionar;
-    BottomAppBar menu;
+    BottomAppBar menu,menuImovel;
 
     ImovelDAO imovelDAO = new ImovelDAO(this);
 
@@ -52,8 +53,10 @@ public class ShowActivity extends AppCompatActivity {
         list_imoveis = (ListView)findViewById(R.id.list_imoveis);
         menu = findViewById(R.id.menuBottomShow);
 
-        //Menu parte debaixo
         setSupportActionBar(menu);
+
+        //Menu parte debaixo
+
         menu.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,8 +74,8 @@ public class ShowActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = list_imoveis.getItemAtPosition(position);
                 String str = (String)o;
-                Snackbar.make(view,str,Snackbar.LENGTH_SHORT).show();
-                final MenuFragment bottomSheetAppBarFragment = new MenuFragment();
+                //Snackbar.make(view,str,Snackbar.LENGTH_SHORT).show();
+                final MenuImovelFragment bottomSheetAppBarFragment = new MenuImovelFragment();
                 bottomSheetAppBarFragment.show(getSupportFragmentManager(), bottomSheetAppBarFragment.getTag());
 
             }

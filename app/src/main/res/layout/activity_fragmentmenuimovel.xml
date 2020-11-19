@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <com.google.android.material.navigation.NavigationView
-      android:id="@+id/navigationView"
+      android:id="@+id/navigationViewImovel"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom"
-      app:menu="@menu/menu_principal"/>
+      app:menu="@menu/menu_imovel"/>
 
 </FrameLayout>

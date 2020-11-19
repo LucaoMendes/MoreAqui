@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/rv_bottom_sheet">
+    android:id="@+id/menu">
     <item
         android:id="@+id/inicio"
         android:title="@string/txt_inicio"

@@ -12,12 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.activities.MoreAqui2Activity;
 import com.projFg.moreaqui.activities.SobreActivity;
 
-public class MenuImovelFragment extends Fragment {
+public class MenuImovelFragment extends BottomSheetDialogFragment  {
 
     @Override public View onCreateView(
             LayoutInflater inflater,
@@ -32,7 +33,7 @@ public class MenuImovelFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //Menu flutuante
-        final NavigationView navigationView = view.findViewById(R.id.navigationView);
+        final NavigationView navigationView = view.findViewById(R.id.navigationViewImovel);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
