@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.InsertActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:isScrollContainer="false"
-    tools:context=".InsertActivity">
+    android:isScrollContainer="false">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -169,34 +174,28 @@
         app:layout_constraintStart_toStartOf="@+id/txt_telefone"
         app:layout_constraintTop_toBottomOf="@+id/opt_tipos" />
 
-    <Button
-        android:id="@+id/btn_salvar"
-        android:layout_width="130dp"
-        android:layout_height="@dimen/hBtn"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="@color/corBotao"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/samsungsans"
-        android:text="@string/btn_salvar"
-        android:textColor="@color/corTextoBotao"
-        app:cornerRadius="10dp"
-        app:icon="@drawable/save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sw_construcao" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/menuBottomShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        app:navigationIcon="@drawable/menu"
+        app:fabAlignmentMode="end"
+        app:fabAnimationMode="scale"
+        app:navigationContentDescription="@string/txt_menu"
+        app:backgroundTint="@color/azulSecundario"
+        app:hideOnScroll="true"
+        />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_voltar"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        app:backgroundTint="@color/colorAccent"
-        app:fabSize="auto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/retorno"
-        app:tint="@color/branco" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:src="@drawable/save"
+        app:layout_anchor="@id/menuBottomShow"
+        android:id="@+id/fabInserir"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoreAqui2Activity">
+    tools:context=".activities.MoreAqui2Activity">
 
     <ImageView
         android:id="@+id/logo"
@@ -26,6 +26,7 @@
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaBotoesLogo"
         android:backgroundTint="@color/corBotao"
+        android:textColor="@color/corTextoBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_novo"
         android:textSize="15sp"
@@ -41,6 +42,7 @@
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaEntreBotoes"
         android:backgroundTint="@color/corBotao"
+        android:textColor="@color/corTextoBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_visualizar"
         android:textSize="15sp"
@@ -56,6 +58,7 @@
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaEntreBotoes"
         android:backgroundTint="@color/corBotao"
+        android:textColor="@color/corTextoBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_mapa"
         android:textSize="15sp"

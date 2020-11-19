@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ShowActivity">
+    tools:context=".activities.ShowActivity">
 
+    <!-- Note: A RecyclerView can also be used -->
     <ListView
         android:id="@+id/list_imoveis"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></ListView>
-</RelativeLayout>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="65dp">
+
+    </ListView>
+
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/menuBottomShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        app:navigationIcon="@drawable/menu"
+        app:fabAlignmentMode="end"
+        app:fabAnimationMode="scale"
+        app:navigationContentDescription="@string/txt_menu"
+        app:backgroundTint="@color/azulSecundario"
+        app:hideOnScroll="true"
+        />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add"
+        app:layout_anchor="@id/menuBottomShow"
+        android:id="@+id/fabAdicionar"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

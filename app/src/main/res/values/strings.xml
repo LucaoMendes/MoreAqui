@@ -23,9 +23,19 @@
     <string name="txt_pronto">Pronto</string>
     <string name="btn_salvar">Salvar</string>
 
+    <string name="txt_menu">Menu</string>
+
     <string name="txt_status">Status</string>
     <string name="txt_infoInserida">As informações foram inseridas com sucesso!</string>
     <string name="txt_erroInfoInvalida">Número de telefone possui formato invalido!</string>
     <string name="txt_erroFaltaInformacoes">Você precisa preencher o formulário completo</string>
     <string name="txt_logo">More Aqui - Imóveis</string>
+
+    <string name="txt_inicio">Inicio</string>
+    <string name="txt_sobre">Sobre</string>
+    <string name="txt_sair">Sair</string>
+
+    <string name="txt_editar">Editar</string>
+    <string name="txt_apagar">Apagar</string>
+
 </resources>
