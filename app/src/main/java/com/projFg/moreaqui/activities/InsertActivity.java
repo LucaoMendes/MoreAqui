@@ -24,13 +24,23 @@ import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.model.ImovelModel;
 
+
+/*
+* Grupo 11
+* Lucas Vinicius Silva Mendes
+* João Gabriel
+* Lucas Eduardo M de Amorim
+* Marcos Vinicius Silva
+* Igor Bezerra
+*/
+
+
 public class InsertActivity extends AppCompatActivity {
     EditText txtTelefone;
     RadioGroup tiposDeImovel,tamanhosDeImovel;
     FloatingActionButton fabInserir;
     RadioButton tipoMarcado,tamanhoMarcado;
     SwitchMaterial emConstrucao;
-    FloatingActionButton fabVoltar;
     ImovelModel imovel;
     ImovelDAO imovelDAO;
 

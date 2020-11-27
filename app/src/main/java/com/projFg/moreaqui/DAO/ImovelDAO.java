@@ -6,6 +6,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
 import com.projFg.moreaqui.model.ImovelModel;
 
 import java.util.ArrayList;

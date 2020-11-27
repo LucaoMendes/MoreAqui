@@ -22,6 +22,17 @@ import com.projFg.moreaqui.model.ImovelModel;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
+
 public class ShowActivity extends AppCompatActivity {
     /*
     * Inicio Fase 2
@@ -106,11 +117,7 @@ public class ShowActivity extends AppCompatActivity {
             //Criação da lista
             for (ImovelModel im:lista) {
                 String status = im.emConstrucaoImovel?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
-                ImoveisRecebidos.add(
-                        getString(R.string.txt_imovel)+":"+im.tipoImovel+","+
-                        getString(R.string.txt_tamanho)+" "+im.tamanhoImovel+ ", "+
-                        getString(R.string.txt_telefone)+": "+im.telefoneImovel + ", "+
-                        getString(R.string.txt_status)+": "+status);
+                ImoveisRecebidos.add(im.toString());
             }
             adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);
             list_imoveis.setAdapter(adapter);

@@ -1,5 +1,14 @@
 package com.projFg.moreaqui.model;
 
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
 public final class ImovelModel {
     public final Long idImovel;
     public final int telefoneImovel;
@@ -13,6 +22,13 @@ public final class ImovelModel {
         this.tipoImovel = tipoImovel;
         this.tamanhoImovel = tamanhoImovel;
         this.emConstrucaoImovel = emConstrucaoImovel;
+    }
+
+    @Override
+    public final String toString() {
+        String ans = "Imovel: " + this.tipoImovel + ", Tamanho: " + this.tamanhoImovel
+                + ", Contato: " + this.telefoneImovel + ", (" + this.emConstrucaoImovel + ")";
+        return ans;
     }
 
 

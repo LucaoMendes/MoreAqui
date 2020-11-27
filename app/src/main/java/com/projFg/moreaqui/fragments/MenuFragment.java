@@ -16,6 +16,15 @@ import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.activities.MoreAqui2Activity;
 import com.projFg.moreaqui.activities.SobreActivity;
 
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
 public class MenuFragment extends BottomSheetDialogFragment {
 
     @Override public View onCreateView(

@@ -9,6 +9,17 @@ import android.widget.Button;
 
 import com.projFg.moreaqui.R;
 
+
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
+
 public class MoreAqui2Activity extends AppCompatActivity {
     Button btnNovo;
     Button btnVisualizar;

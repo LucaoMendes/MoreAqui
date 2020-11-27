@@ -4,6 +4,15 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
 public class ImovelData extends SQLiteOpenHelper {
     private String nomeTabelaImoveis = "imoveis";
     private String scriptDelete = "DROP TABLE IF EXISTS "+ nomeTabelaImoveis;

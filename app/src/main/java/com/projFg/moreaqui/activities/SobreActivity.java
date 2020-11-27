@@ -6,6 +6,15 @@ import android.os.Bundle;
 
 import com.projFg.moreaqui.R;
 
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes
+ * João Gabriel
+ * Lucas Eduardo M de Amorim
+ * Marcos Vinicius Silva
+ * Igor Bezerra
+ */
+
 public class SobreActivity extends AppCompatActivity {
 
     @Override
