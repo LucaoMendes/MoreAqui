@@ -58,15 +58,31 @@
         android:layout_height="@dimen/hBtn"
         android:layout_marginTop="@dimen/distanciaEntreBotoes"
         android:backgroundTint="@color/corBotao"
-        android:textColor="@color/corTextoBotao"
         android:fontFamily="@font/samsungsans"
         android:text="@string/btn_mapa"
+        android:textColor="@color/corTextoBotao"
         android:textSize="15sp"
         app:cornerRadius="10dp"
         app:icon="@drawable/map"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btn_visualizar" />
+
+    <Button
+        android:id="@+id/btn_gravar"
+        android:layout_width="@dimen/wBtn"
+        android:layout_height="@dimen/hBtn"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/corBotao"
+        android:fontFamily="@font/samsungsans"
+        android:text="@string/btn_gravar"
+        android:textColor="@color/corTextoBotao"
+        android:textSize="15sp"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/gravar"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/btn_mapa" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
