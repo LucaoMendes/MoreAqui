@@ -1,11 +1,9 @@
 package com.projFg.moreaqui.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,8 +13,6 @@ import android.view.ViewGroup;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.projFg.moreaqui.R;
-import com.projFg.moreaqui.activities.MoreAqui2Activity;
-import com.projFg.moreaqui.activities.SobreActivity;
 
 /*
  * Grupo 11

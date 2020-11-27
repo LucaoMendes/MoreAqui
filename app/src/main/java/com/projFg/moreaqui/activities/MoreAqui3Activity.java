@@ -20,7 +20,7 @@ import com.projFg.moreaqui.R;
  */
 
 
-public class MoreAqui2Activity extends AppCompatActivity {
+public class MoreAqui3Activity extends AppCompatActivity {
     Button btnNovo;
     Button btnVisualizar;
     Button btnMapa;
@@ -44,7 +44,7 @@ public class MoreAqui2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MoreAqui2Activity.this,
+                Intent i = new Intent(MoreAqui3Activity.this,
                         InsertActivity.class);
                 startActivity(i);
                 finishAffinity();
@@ -54,7 +54,7 @@ public class MoreAqui2Activity extends AppCompatActivity {
         btnVisualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MoreAqui2Activity.this,
+                Intent i = new Intent(MoreAqui3Activity.this,
                         ShowActivity.class);
                 startActivity(i);
                 finishAffinity();
