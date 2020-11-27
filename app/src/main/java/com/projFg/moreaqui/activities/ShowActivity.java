@@ -17,7 +17,7 @@ import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.fragments.MenuImovelFragment;
-import com.projFg.moreaqui.model.ImovelModel;
+import com.projFg.moreaqui.model.Estate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public class ShowActivity extends AppCompatActivity {
 
     //Inicialização de variaveis
     ListView list_imoveis;
-    List<ImovelModel> lista;
+    List<Estate> lista;
     ArrayAdapter<String> adapter;
     FloatingActionButton fabAdicionar;
     BottomAppBar menu,menuImovel;
@@ -115,8 +115,8 @@ public class ShowActivity extends AppCompatActivity {
             //Log.v("DEBUG BD",lista.get(1).emConstrucaoImovel.toString());
 
             //Criação da lista
-            for (ImovelModel im:lista) {
-                String status = im.emConstrucaoImovel?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
+            for (Estate im:lista) {
+                String status = im.STATUS ?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
                 ImoveisRecebidos.add(im.toString());
             }
             adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);

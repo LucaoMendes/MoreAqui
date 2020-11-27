@@ -22,7 +22,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.fragments.MenuFragment;
-import com.projFg.moreaqui.model.ImovelModel;
+import com.projFg.moreaqui.model.Estate;
 
 
 /*
@@ -41,7 +41,7 @@ public class InsertActivity extends AppCompatActivity {
     FloatingActionButton fabInserir;
     RadioButton tipoMarcado,tamanhoMarcado;
     SwitchMaterial emConstrucao;
-    ImovelModel imovel;
+    Estate imovel;
     ImovelDAO imovelDAO;
 
     @Override
@@ -106,8 +106,7 @@ public class InsertActivity extends AppCompatActivity {
                     if (tipoMarcado == null || tamanhoMarcado == null){
                         Snackbar.make(v,R.string.txt_erroFaltaInformacoes,Snackbar.LENGTH_SHORT).show();
                     }else {
-                        imovel = new ImovelModel(
-                                null,
+                        imovel = new Estate(
                                 telefone,
                                 tipoMarcado.getText().toString(),
                                 tamanhoMarcado.getText().toString(),

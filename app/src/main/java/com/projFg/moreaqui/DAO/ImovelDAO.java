@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 /*
  * Grupo 11
@@ -15,7 +14,7 @@ import android.util.Log;
  * Igor Bezerra
  */
 
-import com.projFg.moreaqui.model.ImovelModel;
+import com.projFg.moreaqui.model.Estate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +28,12 @@ public class ImovelDAO {
         dataDb = new ImovelData(ctx,"moreaqui",1);
     }
 
-    public long inserirImovel(ImovelModel imovel){
+    public long inserirImovel(Estate imovel){
         ContentValues im = new ContentValues();
-        im.put("PHONE",imovel.telefoneImovel);
-        im.put("TYPE",imovel.tipoImovel);
-        im.put("SIZE",imovel.tamanhoImovel);
-        im.put("STATUS",imovel.emConstrucaoImovel.toString());
+        im.put("PHONE",imovel.PHONE);
+        im.put("TYPE",imovel.TYPE);
+        im.put("SIZE",imovel.SIZE);
+        im.put("STATUS",imovel.STATUS.toString());
 
         //Log.v("DEBUG DB INSERT",imovel.emConstrucaoImovel.toString());
         db = dataDb.getWritableDatabase();
@@ -42,8 +41,8 @@ public class ImovelDAO {
         db.close();
         return id;
     }
-    public List<ImovelModel> buscarImoveis(){
-        List<ImovelModel> list = new ArrayList<ImovelModel>();
+    public List<Estate> buscarImoveis(){
+        List<Estate> list = new ArrayList<Estate>();
         db = dataDb.getWritableDatabase();
         String[] columns = new String[]{
                 "_ID", "PHONE", "TYPE", "SIZE", "STATUS"};
@@ -52,8 +51,7 @@ public class ImovelDAO {
 
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            ImovelModel im = new ImovelModel(
-                    cursor.getLong(0),
+            Estate im = new Estate(
                     cursor.getInt(1),
                     cursor.getString(2),
                     cursor.getString(3),
