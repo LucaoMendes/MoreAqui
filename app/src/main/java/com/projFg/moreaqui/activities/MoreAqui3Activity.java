@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.projFg.moreaqui.DAO.ImovelDAO;
+import com.projFg.moreaqui.DAO.ImovelData;
 import com.projFg.moreaqui.R;
 
 
@@ -21,9 +23,7 @@ import com.projFg.moreaqui.R;
 
 
 public class MoreAqui3Activity extends AppCompatActivity {
-    Button btnNovo;
-    Button btnVisualizar;
-    Button btnMapa;
+    Button btnNovo,btnVisualizar,btnMapa,btnGravar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class MoreAqui3Activity extends AppCompatActivity {
         btnNovo = (Button) findViewById(R.id.btn_novo);
         btnVisualizar = (Button) findViewById(R.id.btn_visualizar);
         btnMapa = (Button) findViewById(R.id.btn_mapa);
-
+        btnGravar = (Button) findViewById(R.id.btn_gravar);
 
         //onClick Listeners
         btnNovo.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +61,13 @@ public class MoreAqui3Activity extends AppCompatActivity {
             }
         });
 
+        btnGravar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImovelDAO imData = new ImovelDAO(v.getContext());
+                imData.gravarImoveis();
+            }
+        });
 
 
     }

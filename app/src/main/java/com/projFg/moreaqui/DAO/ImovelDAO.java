@@ -15,6 +15,9 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 import com.projFg.moreaqui.model.Estate;
+import com.projFg.moreaqui.server.CMD;
+import com.projFg.moreaqui.server.DaoImpl;
+import com.projFg.moreaqui.server.Invoker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +45,7 @@ public class ImovelDAO {
         return id;
     }
     public List<Estate> buscarImoveis(){
-        List<Estate> list = new ArrayList<Estate>();
+        List<Estate> list = new ArrayList<>();
         db = dataDb.getWritableDatabase();
         String[] columns = new String[]{
                 "_ID", "PHONE", "TYPE", "SIZE", "STATUS"};
@@ -52,10 +55,10 @@ public class ImovelDAO {
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             Estate im = new Estate(
-                    cursor.getInt(1),
+                    cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
-                    Boolean.parseBoolean(cursor.getString(4))
+                    cursor.getString(4)
             );
 
             //Log.v("DEBUG DB Busca",im.emConstrucaoImovel.toString());
@@ -65,6 +68,17 @@ public class ImovelDAO {
         cursor.close();
         db.close();
         return list;
+    }
+    public void gravarImoveis(){
+        List<Estate> list = new ArrayList<>();
+        list = this.buscarImoveis();
+        DaoImpl daoImpl = new DaoImpl();
+        Invoker invok = new Invoker("192.168.43.115",4444);
+        for (Estate im:list) {
+           CMD cmd = new CMD(im,1,list.indexOf(im));
+           invok.invoke(daoImpl,cmd);
+        }
+
     }
 
 

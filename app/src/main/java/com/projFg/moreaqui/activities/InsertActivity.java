@@ -107,10 +107,10 @@ public class InsertActivity extends AppCompatActivity {
                         Snackbar.make(v,R.string.txt_erroFaltaInformacoes,Snackbar.LENGTH_SHORT).show();
                     }else {
                         imovel = new Estate(
-                                telefone,
+                                Integer.toString(telefone),
                                 tipoMarcado.getText().toString(),
                                 tamanhoMarcado.getText().toString(),
-                                emConstrucao.isChecked());
+                                Boolean.toString(emConstrucao.isChecked()));
 
                         //Log.v("New",imovel.toString());
 

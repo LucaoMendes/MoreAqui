@@ -116,7 +116,7 @@ public class ShowActivity extends AppCompatActivity {
 
             //Criação da lista
             for (Estate im:lista) {
-                String status = im.STATUS ?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
+                String status =  Boolean.parseBoolean(im.STATUS) ?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
                 ImoveisRecebidos.add(im.toString());
             }
             adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);
