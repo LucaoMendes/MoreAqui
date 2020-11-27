@@ -28,7 +28,7 @@ public class MoreAqui3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_moreaqui2);
+        setContentView(R.layout.activity_moreaqui3);
 
 
         /*
