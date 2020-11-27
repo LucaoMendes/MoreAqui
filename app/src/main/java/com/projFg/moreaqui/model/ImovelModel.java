@@ -26,8 +26,8 @@ public final class ImovelModel {
 
     @Override
     public final String toString() {
-        String ans = "Imovel: " + this.tipoImovel + ", Tamanho: " + this.tamanhoImovel
-                + ", Contato: " + this.telefoneImovel + ", (" + this.emConstrucaoImovel + ")";
+        String ans = "Imovel: " + this.tipoImovel + " Tamanho: " + this.tamanhoImovel
+                + "\n Contato: " + this.telefoneImovel + "(" + (this.emConstrucaoImovel?"Em Construção":"Pronto") + ")";
         return ans;
     }
 
