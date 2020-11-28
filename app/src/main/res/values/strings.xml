@@ -33,7 +33,10 @@
     <string name="txt_erroInfoInvalida">Número de telefone possui formato invalido!</string>
     <string name="txt_erroFaltaInformacoes">Você precisa preencher o formulário completo</string>
     <string name="txt_erroPermissao">Você precisa permitir o acesso ao gps</string>
+    <string name="txt_erroGPS">Ocorreu um erro ao pegar a sua localização via GPS</string>
 
+    <string name="txt_infoImovel">Imovel tipo:</string>
+    <string name="txt_infoImovelContato">Telefone:</string>
     <string name="txt_logo">More Aqui - Imóveis</string>
 
     <string name="txt_inicio">Inicio</string>

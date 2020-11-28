@@ -1,5 +1,6 @@
 package com.projFg.moreaqui.activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -9,7 +10,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -33,6 +36,8 @@ import com.projFg.moreaqui.config;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.model.LocationEstate;
 
+import java.util.List;
+
 
 /*
  * Grupo 11
@@ -55,7 +60,7 @@ public class InsertActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, MoreAqui4Activity.class));
+        startActivity(new Intent(this, MoreAqui5Activity.class));
         finishAffinity();
     }
 
@@ -80,6 +85,8 @@ public class InsertActivity extends AppCompatActivity {
         emConstrucao = (SwitchMaterial) findViewById(R.id.sw_construcao);
         fabInserir = (FloatingActionButton) findViewById(R.id.fabInserir);
         imovelDAO = new ImovelDAO(this);
+
+
 
         //Menu parte debaixo
 
@@ -120,6 +127,7 @@ public class InsertActivity extends AppCompatActivity {
                 try{
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                         double[] l =  getLocation();
+
                         try {
                             int telefone = Integer.parseInt(txtTelefone.getText().toString());
                             if (tipoMarcado == null || tamanhoMarcado == null) {
@@ -128,37 +136,33 @@ public class InsertActivity extends AppCompatActivity {
                                 double[] local = new double[0];
                                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                                     local = getLocation();
+                                    if(local!=null){
+                                        double latitude = local[0];
+                                        double longitude = local[1];
+                                        imovel = new LocationEstate(
+                                                Integer.toString(telefone),
+                                                tipoMarcado.getText().toString(),
+                                                tamanhoMarcado.getText().toString(),
+                                                Boolean.toString(emConstrucao.isChecked()),
+                                                latitude,
+                                                longitude);
+                                        Log.v(config.DEBUG_INSERTACT,imovel.toString());
+                                        Long id = imovelDAO.inserirImovel(imovel);
+
+
+
+                                        Intent i = new Intent(InsertActivity.this, ShowActivity.class);
+                                        i.putExtra("insert", true);
+                                        startActivity(i);
+                                        finishAffinity();
+                                    }else{
+                                        Log.v(config.DEBUG_INSERTACT, "Erro de GPS - getLocation = null"); //Debug de codigo via logCat
+                                        Snackbar.make(v, R.string.txt_erroGPS, Snackbar.LENGTH_LONG).show();
+                                    }
                                 }
-                                double latitude = local[0];
-                                double longitude = local[1];
-                                imovel = new LocationEstate(
-                                        Integer.toString(telefone),
-                                        tipoMarcado.getText().toString(),
-                                        tamanhoMarcado.getText().toString(),
-                                        Boolean.toString(emConstrucao.isChecked()),
-                                        latitude,
-                                        longitude);
-
-
-                                Log.v(config.DEBUG_INSERTACT,imovel.toString());
-
-                                //Log.v("New",imovel.toString());
-
-                                Long id = imovelDAO.inserirImovel(imovel);
-                                if (id != null) {
-                                    //Log.v("DEBUG Inserir Imovel","ID: "+id);
-                                }
-
-
+                                //Fechar teclado
                                 InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
                                 imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-
-
-                                Intent i = new Intent(InsertActivity.this, ShowActivity.class);
-                                i.putExtra("insert", true);
-                                startActivity(i);
-                                finishAffinity();
-
 
                             }
 
@@ -204,13 +208,36 @@ public class InsertActivity extends AppCompatActivity {
             String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
             requestPermissions(perms,200);
         }
-        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        double longitude = location.getLongitude();
-        double latitude = location.getLatitude();
-        double[] local = new double[2];
-        local[0] = latitude;
-        local[1] = longitude;
-        return local;
+
+        LocationManager lm = (LocationManager)getApplicationContext().getSystemService(LOCATION_SERVICE);
+        List<String> providers = lm.getProviders(true);
+        Location location = null;
+        for (String provider : providers) {
+            Location l = lm.getLastKnownLocation(provider);
+            if (l == null) {
+                continue;
+            }
+            if (location == null || l.getAccuracy() < location.getAccuracy()) {
+                location = l;
+            }
+        }
+
+        if(location!=null){
+            double longitude = location.getLongitude();
+            double latitude = location.getLatitude();
+            double[] local = new double[2];
+            local[0] = latitude;
+            local[1] = longitude;
+            return local;
+        }else{
+
+            return null;
+        }
+
+
+
+
     }
+
+
 }

@@ -40,11 +40,11 @@
         <activity android:name=".activities.ShowActivity" />
         <activity
             android:name=".activities.InsertActivity"
-            android:parentActivityName=".activities.MoreAqui4Activity"
+            android:parentActivityName=".activities.MoreAqui5Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.MoreAqui4Activity"
+            android:name=".activities.MoreAqui5Activity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

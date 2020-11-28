@@ -73,7 +73,11 @@ public class ImovelDAO {
         String[] columns = config.COLUMNS;
 
         Cursor cursor = db.query(tabelaImoveis, columns, null, null, null, null, "_id");
+        Log.v(config.DEBUG_DB_BUSCA,"CURSOR: "+ cursor.getCount());
 
+        if(cursor.getCount() == 0){
+            return null;
+        }
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             LocationEstate im = new LocationEstate(

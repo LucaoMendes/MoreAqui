@@ -23,13 +23,13 @@ import com.projFg.moreaqui.R;
  */
 
 
-public class MoreAqui4Activity extends AppCompatActivity {
+public class MoreAqui5Activity extends AppCompatActivity {
     Button btnNovo,btnVisualizar,btnMapa,btnGravar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_moreaqui4);
+        setContentView(R.layout.activity_moreaqui5);
 
 
         /*
@@ -45,7 +45,7 @@ public class MoreAqui4Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MoreAqui4Activity.this,
+                Intent i = new Intent(MoreAqui5Activity.this,
                         InsertActivity.class);
                 startActivity(i);
                 finishAffinity();
@@ -56,7 +56,7 @@ public class MoreAqui4Activity extends AppCompatActivity {
         btnVisualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MoreAqui4Activity.this,
+                Intent i = new Intent(MoreAqui5Activity.this,
                         ShowActivity.class);
                 startActivity(i);
                 finishAffinity();
@@ -73,6 +73,16 @@ public class MoreAqui4Activity extends AppCompatActivity {
                 Snackbar msgGravar = Snackbar.make(v,R.string.txt_gravarInfo,Snackbar.LENGTH_LONG);
                 msgGravar.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE);
                 msgGravar.show();
+            }
+        });
+
+        btnMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MoreAqui5Activity.this,
+                        ShowAddressesActivity.class);
+                startActivity(i);
+                finishAffinity();
             }
         });
 

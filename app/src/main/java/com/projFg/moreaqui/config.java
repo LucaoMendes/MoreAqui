@@ -12,6 +12,7 @@ public interface config {
     public final String DEBUG_MENU_IMOVEL = "DEBUG Menu Imovel";
     public final String DEBUG_SEP = "===============================";
     public final String DEBUG_EXCEPTION = "DEBUG EXCEPTION";
+    public final String DEBUG_GPS = "DEBUG GPS";
 
     //OPERAÇÕES NO CRUD
 

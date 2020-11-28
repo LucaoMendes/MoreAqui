@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.projFg.moreaqui.R;
-import com.projFg.moreaqui.activities.MoreAqui4Activity;
+import com.projFg.moreaqui.activities.MoreAqui5Activity;
 import com.projFg.moreaqui.activities.SobreActivity;
 
 /*
@@ -45,7 +45,7 @@ public class MenuFragment extends BottomSheetDialogFragment {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getTitle().equals(getString(R.string.txt_inicio))){
-                    startActivity(new Intent(getActivity(), MoreAqui4Activity.class));
+                    startActivity(new Intent(getActivity(), MoreAqui5Activity.class));
                     getActivity().finish();
                 }else if(item.getTitle().equals(getString(R.string.txt_sobre))){
                     startActivity(new Intent(getActivity(), SobreActivity.class));

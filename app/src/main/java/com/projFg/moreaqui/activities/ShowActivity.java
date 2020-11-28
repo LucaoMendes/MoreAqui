@@ -53,7 +53,7 @@ public class ShowActivity extends AppCompatActivity {
     //Botão de retorno voltar a activity anterior
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(this, MoreAqui4Activity.class));
+        startActivity(new Intent(this, MoreAqui5Activity.class));
         finishAffinity();
     }
 
