@@ -3,6 +3,8 @@ package com.projFg.moreaqui.server;
 import android.os.StrictMode;
 import android.util.Log;
 
+import com.projFg.moreaqui.config;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -42,7 +44,7 @@ public class Invoker {
      * @param newPort the port in the server host where connection must be made.
      */
     public Invoker(final String newHost, final int newPort) {
-        Log.v("SERVER DEBUG:","Construido o Invoker");
+        Log.v(config.DEBUG_SERVER,"Construido o Invoker");
         this.host = newHost;
         this.port = newPort;
     }
@@ -51,7 +53,7 @@ public class Invoker {
      * Creates a new connection with the remote server.
      */
     private void openConnection() {
-        Log.v("SERVER DEBUG:","Tentando Abrir Conexão");
+        Log.v(config.DEBUG_SERVER,"Tentando Abrir Conexão");
         // Open a new connection:
         try {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
@@ -60,9 +62,9 @@ public class Invoker {
             socket = new Socket(host, port);
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
-            Log.v("SERVER DEBUG:","Conexão Aberta");
+            Log.v(config.DEBUG_SERVER,"Conexão Aberta");
         } catch (Exception e) {
-            Log.v("SERVER DEBUG:","Erro de conexão: "+e.toString());
+            Log.v(config.DEBUG_SERVER,"Erro de conexão: "+e.toString());
             e.printStackTrace();
         }
     }
@@ -71,7 +73,7 @@ public class Invoker {
      * Closes the connection with the remote server.
      */
     private void closeConnection() {
-        Log.v("SERVER DEBUG:","Tentando fechar conexão");
+        Log.v(config.DEBUG_SERVER,"Tentando fechar conexão");
         try {
             // out.writeObject(new Integer(EOF));
             out.writeObject(Integer.valueOf(EOF));
@@ -79,9 +81,9 @@ public class Invoker {
             socket.close();
             out.close();
             in.close();
-            Log.v("SERVER DEBUG:","Conexão Fechada");
+            Log.v(config.DEBUG_SERVER,"Conexão Fechada");
         } catch (Exception e) {
-            Log.v("SERVER DEBUG:","Erro de Desconexão: "+e.toString());
+            Log.v(config.DEBUG_SERVER,"Erro de Desconexão: "+e.toString());
             e.printStackTrace();
         }
     }
@@ -93,11 +95,11 @@ public class Invoker {
      * @param c the command that contains the actions that will be executed.
      */
     public final void invoke(final DaoImpl d, final Command c) {
-        Log.v("SERVER DEBUG:","Comando Invoke Chamado");
+        Log.v(config.DEBUG_SERVER,"Comando Invoke Chamado");
         openConnection();
         d.setChannels(out, in);
         c.execute(d);
         closeConnection();
-        Log.v("SERVER DEBUG:","Saindo comando Invoke");
+        Log.v(config.DEBUG_SERVER,"Saindo comando Invoke");
     }
 }

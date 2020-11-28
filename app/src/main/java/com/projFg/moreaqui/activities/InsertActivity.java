@@ -21,6 +21,7 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 //Classe Estate com as informações do imovel
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
+import com.projFg.moreaqui.config;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.model.Estate;
 
@@ -129,13 +130,14 @@ public class InsertActivity extends AppCompatActivity {
                         startActivity(i);
                         finishAffinity();
 
+
                     }
 
 
 
 
                 }catch(Exception e){
-                    Log.v("DEBUG","Exception -> "+e.toString()); //Debug de codigo via logCat
+                    Log.v(config.DEBUG_INSERTACT,"Exception -> "+e.toString()); //Debug de codigo via logCat
                     Snackbar.make(v,R.string.txt_erroInfoInvalida,Snackbar.LENGTH_SHORT).show();
 
                 }

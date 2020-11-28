@@ -8,6 +8,8 @@
     <string name="btn_salvar">Salvar</string>
     <string name="btn_gravar">Gravar</string>
 
+    <string name="txt_gravarInfo">As informações foram salvas no servidor remoto</string>
+    <string name="txt_deletarMsg">Imovel deletado</string>
     <string name="txt_telefone">Telefone</string>
 
     <string name="txt_imovel">Imovel</string>

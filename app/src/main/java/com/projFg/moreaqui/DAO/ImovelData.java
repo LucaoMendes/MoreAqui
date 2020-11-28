@@ -3,6 +3,7 @@ package com.projFg.moreaqui.DAO;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import com.projFg.moreaqui.config;
 
 /*
  * Grupo 11
@@ -14,7 +15,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class ImovelData extends SQLiteOpenHelper {
-    private String nomeTabelaImoveis = "imoveis";
+    private String nomeTabelaImoveis = config.TABELA_IMOVEIS;
     private String scriptDelete = "DROP TABLE IF EXISTS "+ nomeTabelaImoveis;
     public ImovelData(Context ctx, String nomeBd,
                       int versaoBanco) {

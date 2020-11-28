@@ -38,6 +38,7 @@ public final class Estate implements Serializable {
 
     /** The estate is large, i.e., it has more than four rooms. */
     public static final int LARGE = 3;
+    private long id;
     public final String PHONE;
     public final String TYPE;
     public final String SIZE;
@@ -55,6 +56,13 @@ public final class Estate implements Serializable {
         String ans = "Imovel: "+ this.TYPE + " Tamanho: " + this.SIZE
                 + "\n Contato: " + this.PHONE + "(" + (Boolean.parseBoolean(this.STATUS) ?"Em Construção":"Pronto") + ")";
         return ans;
+    }
+
+    public long getId(){
+        return this.id;
+    }
+    public void setId(long id){
+        this.id = id;
     }
 
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.DAO.ImovelData;
 import com.projFg.moreaqui.R;
@@ -48,6 +50,7 @@ public class MoreAqui3Activity extends AppCompatActivity {
                         InsertActivity.class);
                 startActivity(i);
                 finishAffinity();
+
             }
         });
 
@@ -58,6 +61,7 @@ public class MoreAqui3Activity extends AppCompatActivity {
                         ShowActivity.class);
                 startActivity(i);
                 finishAffinity();
+
             }
         });
 
@@ -66,6 +70,10 @@ public class MoreAqui3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 ImovelDAO imData = new ImovelDAO(v.getContext());
                 imData.gravarImoveis();
+
+                Snackbar msgGravar = Snackbar.make(v,R.string.txt_gravarInfo,Snackbar.LENGTH_LONG);
+                msgGravar.setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_SLIDE);
+                msgGravar.show();
             }
         });
 

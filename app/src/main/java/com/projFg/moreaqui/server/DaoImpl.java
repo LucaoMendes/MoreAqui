@@ -2,6 +2,8 @@ package com.projFg.moreaqui.server;
 
 import android.util.Log;
 
+import com.projFg.moreaqui.config;
+
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -32,7 +34,7 @@ public class DaoImpl implements DAO<Long, Serializable> {
      * @param newIn  channel to receive data.
      */
     public final void setChannels(final ObjectOutputStream newOut, final ObjectInputStream newIn) {
-        Log.v("SERVER DEBUG:","Função SetChannels Chamada");
+        Log.v(config.DEBUG_SERVER,"Função SetChannels Chamada");
 
         this.out = newOut;
         this.in = newIn;
@@ -66,9 +68,9 @@ public class DaoImpl implements DAO<Long, Serializable> {
      * @param value the value associated with the key K.
      */
     public final void add(final Long key, final Serializable value) {
-        Log.v("SERVER DEBUG:","Iniciando função ADD DAO");
+        Log.v(config.DEBUG_SERVER,"Iniciando função ADD DAO");
         try {
-            Log.v("SERVER DEBUG:","Função Iniciada");
+            Log.v(config.DEBUG_SERVER,"Função Iniciada");
             // out.writeObject(new Integer(DAO.ADD));
             // out.writeObject(new Long(key));
             out.writeObject(Integer.valueOf(DAO.ADD));
@@ -76,7 +78,7 @@ public class DaoImpl implements DAO<Long, Serializable> {
             out.writeObject(value);
             out.flush();
         } catch (Exception e) {
-            Log.v("SERVER DEBUG:","ERRO Ao adicionar : "+ e.toString());
+            Log.v(config.DEBUG_SERVER,"ERRO Ao adicionar : "+ e.toString());
             e.printStackTrace();
         }
     }
