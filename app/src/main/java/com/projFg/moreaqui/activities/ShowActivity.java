@@ -19,7 +19,7 @@ import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.config;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.fragments.MenuImovelFragment;
-import com.projFg.moreaqui.model.Estate;
+import com.projFg.moreaqui.model.LocationEstate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class ShowActivity extends AppCompatActivity {
 
     //Inicialização de variaveis
     ListView list_imoveis;
-    List<Estate> lista;
+    List<LocationEstate> lista;
     ArrayAdapter<String> adapter;
     FloatingActionButton fabAdicionar;
     BottomAppBar menu,menuImovel;
@@ -58,8 +58,8 @@ public class ShowActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstancLocationEstate) {
+        super.onCreate(savedInstancLocationEstate);
         setContentView(R.layout.activity_show);
 
         fabAdicionar = (FloatingActionButton) findViewById(R.id.fabAdicionar);
@@ -92,7 +92,7 @@ public class ShowActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
 
                 ImovelDAO imDao = new ImovelDAO(view.getContext());
-                List<Estate> imoveis = imDao.buscarImoveis();
+                List<LocationEstate> imoveis = imDao.buscarImoveis();
                 long idImovel = imoveis.get(position).getId();
                 Log.v(config.DEBUG_SHOWACT,config.DEBUG_SEP);
                 Log.v(config.DEBUG_SHOWACT,"Id do Imovel é:"+idImovel);
@@ -134,8 +134,7 @@ public class ShowActivity extends AppCompatActivity {
             //Log.v("DEBUG BD",lista.get(1).emConstrucaoImovel.toString());
 
             //Criação da lista
-            for (Estate im:lista) {
-                String status =  Boolean.parseBoolean(im.STATUS) ?getString(R.string.txt_construcao):getString(R.string.txt_pronto);
+            for (LocationEstate im:lista) {
                 ImoveisRecebidos.add(im.toString());
             }
             adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);

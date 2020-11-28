@@ -27,7 +27,6 @@
     <string name="txt_pronto">Pronto</string>
 
 
-
     <string name="txt_menu">Menu</string>
 
     <string name="txt_infoInserida">As informações foram inseridas com sucesso!</string>
@@ -43,5 +42,6 @@
 
     <string name="txt_editar">Editar</string>
     <string name="txt_apagar">Apagar</string>
+    <string name="title_activity_show_addresses">Map</string>
 
 </resources>

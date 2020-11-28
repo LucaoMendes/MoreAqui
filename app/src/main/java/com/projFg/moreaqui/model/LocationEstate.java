@@ -19,7 +19,7 @@ public final class LocationEstate extends Estate {
     public final String toString() {
         String ans = "Imovel: "+ this.TYPE + " Tamanho: " + this.SIZE
                 + "\n Contato: " + this.PHONE + "(" + (Boolean.parseBoolean(this.STATUS) ?"Em Construção":"Pronto") + ")"
-                + "\n Latitude: "+ this.LATITUDE + " Longitude: "+ this.LONGITUDE;
+                + "\n Latitude: "+ this.LATITUDE + "\n Longitude: "+ this.LONGITUDE;
         return ans;
     }
 }

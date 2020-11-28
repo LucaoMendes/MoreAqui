@@ -24,9 +24,9 @@ public interface config {
 
     public final String TABELA_IMOVEIS = "imoveis";
     public final String NOME_DB = "moreAqui";
-    public final int VERSAO_DB = 1;
+    public final int VERSAO_DB = 2;
     public final String[] COLUMNS = new String[]{
-            "_ID", "PHONE", "TYPE", "SIZE", "STATUS"};
+            "_ID", "PHONE", "TYPE", "SIZE", "STATUS", "LATITUDE", "LONGITUDE"};
 
     //CONFIGURAÇÕES SERVIDOR REMOTO
     public final String HOST = "192.168.43.115";

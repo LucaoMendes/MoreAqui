@@ -24,7 +24,8 @@ import android.util.Log;
 import androidx.core.app.ActivityCompat;
 
 import com.projFg.moreaqui.config;
-import com.projFg.moreaqui.model.Estate;
+import com.projFg.moreaqui.model.LocationEstate;
+import com.projFg.moreaqui.model.LocationEstate;
 import com.projFg.moreaqui.server.CMD;
 import com.projFg.moreaqui.server.DaoImpl;
 import com.projFg.moreaqui.server.Invoker;
@@ -50,12 +51,14 @@ public class ImovelDAO {
         dataDb = new ImovelData(ctx, config.NOME_DB, config.VERSAO_DB);
     }
 
-    public long inserirImovel(Estate imovel) {
+    public long inserirImovel(LocationEstate imovel) {
         ContentValues im = new ContentValues();
         im.put("PHONE", imovel.PHONE);
         im.put("TYPE", imovel.TYPE);
         im.put("SIZE", imovel.SIZE);
         im.put("STATUS", imovel.STATUS.toString());
+        im.put("LATITUDE",imovel.LATITUDE);
+        im.put("LONGITUDE",imovel.LONGITUDE);
 
         //Log.v("DEBUG DB INSERT",imovel.emConstrucaoImovel.toString());
         db = dataDb.getWritableDatabase();
@@ -64,8 +67,8 @@ public class ImovelDAO {
         return id;
     }
 
-    public List<Estate> buscarImoveis() {
-        List<Estate> list = new ArrayList<>();
+    public List<LocationEstate> buscarImoveis() {
+        List<LocationEstate> list = new ArrayList<>();
         db = dataDb.getWritableDatabase();
         String[] columns = config.COLUMNS;
 
@@ -73,12 +76,14 @@ public class ImovelDAO {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            Estate im = new Estate(
+            LocationEstate im = new LocationEstate(
 
                     cursor.getString(1),
                     cursor.getString(2),
                     cursor.getString(3),
-                    cursor.getString(4)
+                    cursor.getString(4),
+                    cursor.getDouble(5),
+                    cursor.getDouble(6)
             );
             im.setId(cursor.getLong(0));
 
@@ -90,6 +95,8 @@ public class ImovelDAO {
             Log.v(config.DEBUG_DB_BUSCA, "Imovel: " + im.TYPE);
             Log.v(config.DEBUG_DB_BUSCA, "Tamanho: " + im.SIZE);
             Log.v(config.DEBUG_DB_BUSCA, "Em Construção: " + im.STATUS);
+            Log.v(config.DEBUG_DB_BUSCA, "Latitude: "+ im.LATITUDE);
+            Log.v(config.DEBUG_DB_BUSCA, "Longitude: "+ im.LONGITUDE);
             Log.v(config.DEBUG_DB_BUSCA, config.DEBUG_SEP);
 
             cursor.moveToNext();
@@ -107,11 +114,11 @@ public class ImovelDAO {
     }
 
     public void gravarImoveis() {
-        List<Estate> list = new ArrayList<>();
+        List<LocationEstate> list = new ArrayList<>();
         list = this.buscarImoveis();
         DaoImpl daoImpl = new DaoImpl();
         Invoker invok = new Invoker(config.HOST, config.PORT);
-        for (Estate im : list) {
+        for (LocationEstate im : list) {
             long id = im.getId();
             Log.v(config.DEBUG_SERVER, "ID:" + id);
             CMD cmd = new CMD(im, CREATE_OP, id);

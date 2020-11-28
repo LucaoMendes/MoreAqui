@@ -30,7 +30,9 @@ public class ImovelData extends SQLiteOpenHelper {
                 "PHONE TEXT NOT NULL," +
                 "TYPE TEXT NOT NULL," +
                 "SIZE TEXT NOT NULL," +
-                "STATUS TEXT" +
+                "STATUS TEXT NOT NULL," +
+                "LATITUDE DOUBLE NOT NULL,"+
+                "LONGITUDE DOUBLE NOT NULL"+
 
                 ")");
     }
