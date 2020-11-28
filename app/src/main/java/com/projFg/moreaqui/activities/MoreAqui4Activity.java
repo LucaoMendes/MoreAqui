@@ -10,7 +10,6 @@ import android.widget.Button;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.projFg.moreaqui.DAO.ImovelDAO;
-import com.projFg.moreaqui.DAO.ImovelData;
 import com.projFg.moreaqui.R;
 
 
@@ -24,13 +23,13 @@ import com.projFg.moreaqui.R;
  */
 
 
-public class MoreAqui3Activity extends AppCompatActivity {
+public class MoreAqui4Activity extends AppCompatActivity {
     Button btnNovo,btnVisualizar,btnMapa,btnGravar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_moreaqui3);
+        setContentView(R.layout.activity_moreaqui4);
 
 
         /*
@@ -46,7 +45,7 @@ public class MoreAqui3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(MoreAqui3Activity.this,
+                Intent i = new Intent(MoreAqui4Activity.this,
                         InsertActivity.class);
                 startActivity(i);
                 finishAffinity();
@@ -57,7 +56,7 @@ public class MoreAqui3Activity extends AppCompatActivity {
         btnVisualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MoreAqui3Activity.this,
+                Intent i = new Intent(MoreAqui4Activity.this,
                         ShowActivity.class);
                 startActivity(i);
                 finishAffinity();

@@ -5,14 +5,11 @@
     <string name="btn_novo">Novo</string>
     <string name="btn_visualizar">Visualizar</string>
     <string name="btn_mapa">Mapa</string>
-    <string name="btn_salvar">Salvar</string>
     <string name="btn_gravar">Gravar</string>
 
     <string name="txt_gravarInfo">As informações foram salvas no servidor remoto</string>
     <string name="txt_deletarMsg">Imovel deletado</string>
     <string name="txt_telefone">Telefone</string>
-
-    <string name="txt_imovel">Imovel</string>
 
     <string name="txt_tipo">Tipo:</string>
     <string name="txt_tipoCasa">Casa</string>
@@ -33,10 +30,11 @@
 
     <string name="txt_menu">Menu</string>
 
-    <string name="txt_status">Status</string>
     <string name="txt_infoInserida">As informações foram inseridas com sucesso!</string>
     <string name="txt_erroInfoInvalida">Número de telefone possui formato invalido!</string>
     <string name="txt_erroFaltaInformacoes">Você precisa preencher o formulário completo</string>
+    <string name="txt_erroPermissao">Você precisa permitir o acesso ao gps</string>
+
     <string name="txt_logo">More Aqui - Imóveis</string>
 
     <string name="txt_inicio">Inicio</string>

@@ -11,7 +11,7 @@ package com.projFg.moreaqui.model;
 
 import java.io.Serializable;
 
-public final class Estate implements Serializable {
+public class Estate implements Serializable {
     /** The serial version of this class. */
     private static final long serialVersionUID = 1734003038366261208L;
 
@@ -52,7 +52,7 @@ public final class Estate implements Serializable {
     }
 
     @Override
-    public final String toString() {
+    public  String toString() {
         String ans = "Imovel: "+ this.TYPE + " Tamanho: " + this.SIZE
                 + "\n Contato: " + this.PHONE + "(" + (Boolean.parseBoolean(this.STATUS) ?"Em Construção":"Pronto") + ")";
         return ans;

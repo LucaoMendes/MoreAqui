@@ -1,7 +1,6 @@
 package com.projFg.moreaqui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -54,7 +53,7 @@ public class ShowActivity extends AppCompatActivity {
     //Botão de retorno voltar a activity anterior
     @Override
     public void onBackPressed(){
-        startActivity(new Intent(this, MoreAqui3Activity.class));
+        startActivity(new Intent(this, MoreAqui4Activity.class));
         finishAffinity();
     }
 

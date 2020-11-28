@@ -3,6 +3,8 @@
     package="com.projFg.moreaqui">
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -15,11 +17,11 @@
         <activity android:name=".activities.ShowActivity" />
         <activity
             android:name=".activities.InsertActivity"
-            android:parentActivityName=".activities.MoreAqui3Activity"
+            android:parentActivityName=".activities.MoreAqui4Activity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activities.MoreAqui3Activity"
+            android:name=".activities.MoreAqui4Activity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
