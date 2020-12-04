@@ -35,21 +35,24 @@ import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.config;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.model.LocationEstate;
+import com.projFg.moreaqui.model.Mask;
 
 import java.util.List;
 
 
 /*
  * Grupo 11
- * Lucas Vinicius Silva Mendes
- * João Gabriel
- * Lucas Eduardo M de Amorim
- * Marcos Vinicius Silva
- * Igor Bezerra
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
  */
 
 
 public class InsertActivity extends AppCompatActivity {
+
+    //Instanciando Variaveis
     EditText txtTelefone;
     RadioGroup tiposDeImovel, tamanhosDeImovel;
     FloatingActionButton fabInserir;
@@ -66,9 +69,13 @@ public class InsertActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Verificação da permissão da localização
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                //Verifica se a versão do android é igual ou maior que Marshmallow e faz a solicitação
+                //da Permissão
                 requestPermissions(perms,200);
             }
         }
@@ -77,16 +84,16 @@ public class InsertActivity extends AppCompatActivity {
 
 
         /*
-         * Instanciando variaveis
+         * Inicializando variaveis
          */
-        txtTelefone = (EditText) findViewById(R.id.txt_telefone);
-        tiposDeImovel = (RadioGroup) findViewById(R.id.opt_tipos);
-        tamanhosDeImovel = (RadioGroup) findViewById(R.id.opt_tamanhos);
-        emConstrucao = (SwitchMaterial) findViewById(R.id.sw_construcao);
-        fabInserir = (FloatingActionButton) findViewById(R.id.fabInserir);
+        txtTelefone = findViewById(R.id.txt_telefone);
+        tiposDeImovel = findViewById(R.id.opt_tipos);
+        tamanhosDeImovel = findViewById(R.id.opt_tamanhos);
+        emConstrucao = findViewById(R.id.sw_construcao);
+        fabInserir = findViewById(R.id.fabInserir);
         imovelDAO = new ImovelDAO(this);
 
-
+        txtTelefone.addTextChangedListener(Mask.mask(txtTelefone, Mask.FORMAT_FONE));
 
         //Menu parte debaixo
 
@@ -108,13 +115,13 @@ public class InsertActivity extends AppCompatActivity {
         tiposDeImovel.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                tipoMarcado = (RadioButton) findViewById(checkedId);
+                tipoMarcado = findViewById(checkedId);
             }
         });
         tamanhosDeImovel.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                tamanhoMarcado = (RadioButton) findViewById(checkedId);
+                tamanhoMarcado = findViewById(checkedId);
             }
         });
 
@@ -125,22 +132,24 @@ public class InsertActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 try{
+                    //Verifica a versão do android, se Maior que Marshmallow pega a localização anteriormente PERMITIDA
                     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                         double[] l =  getLocation();
+                        //Verifica o tamanho do telefone
+                        String telefone = txtTelefone.getText().toString();
+                        if(telefone.length() == 14) {
 
-                        try {
-                            int telefone = Integer.parseInt(txtTelefone.getText().toString());
                             if (tipoMarcado == null || tamanhoMarcado == null) {
                                 Snackbar.make(v, R.string.txt_erroFaltaInformacoes, Snackbar.LENGTH_SHORT).show();
                             } else {
-                                double[] local = new double[0];
+                                double[] local;
                                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                                     local = getLocation();
                                     if(local!=null){
                                         double latitude = local[0];
                                         double longitude = local[1];
                                         imovel = new LocationEstate(
-                                                Integer.toString(telefone),
+                                                telefone,
                                                 tipoMarcado.getText().toString(),
                                                 tamanhoMarcado.getText().toString(),
                                                 Boolean.toString(emConstrucao.isChecked()),
@@ -167,8 +176,8 @@ public class InsertActivity extends AppCompatActivity {
                             }
 
 
-                        } catch (Exception e) {
-                            Log.v(config.DEBUG_INSERTACT, "Exception -> " + e.toString()); //Debug de codigo via logCat
+                        } else {
+                            Log.v(config.DEBUG_INSERTACT, "Exception -> TELEFONE INVALIDO"); //Debug de codigo via logCat
                             Snackbar.make(v, R.string.txt_erroInfoInvalida, Snackbar.LENGTH_SHORT).show();
 
                         }

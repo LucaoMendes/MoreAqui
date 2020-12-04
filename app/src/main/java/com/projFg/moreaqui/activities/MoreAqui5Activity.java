@@ -15,11 +15,11 @@ import com.projFg.moreaqui.R;
 
 /*
  * Grupo 11
- * Lucas Vinicius Silva Mendes
- * João Gabriel
- * Lucas Eduardo M de Amorim
- * Marcos Vinicius Silva
- * Igor Bezerra
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
  */
 
 
@@ -35,12 +35,14 @@ public class MoreAqui5Activity extends AppCompatActivity {
         /*
         * Instanciando variaveis
         */
-        btnNovo = (Button) findViewById(R.id.btn_novo);
-        btnVisualizar = (Button) findViewById(R.id.btn_visualizar);
-        btnMapa = (Button) findViewById(R.id.btn_mapa);
-        btnGravar = (Button) findViewById(R.id.btn_gravar);
+        btnNovo = findViewById(R.id.btn_novo);
+        btnVisualizar = findViewById(R.id.btn_visualizar);
+        btnMapa = findViewById(R.id.btn_mapa);
+        btnGravar = findViewById(R.id.btn_gravar);
 
         //onClick Listeners
+
+        //Botão Novo
         btnNovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +55,7 @@ public class MoreAqui5Activity extends AppCompatActivity {
             }
         });
 
+        //Botão Visualizar
         btnVisualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +67,18 @@ public class MoreAqui5Activity extends AppCompatActivity {
             }
         });
 
+        //Botão mapa
+        btnMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MoreAqui5Activity.this,
+                        ShowAddressesActivity.class);
+                startActivity(i);
+                finishAffinity();
+            }
+        });
+
+        //Botão Gravar
         btnGravar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,15 +91,6 @@ public class MoreAqui5Activity extends AppCompatActivity {
             }
         });
 
-        btnMapa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MoreAqui5Activity.this,
-                        ShowAddressesActivity.class);
-                startActivity(i);
-                finishAffinity();
-            }
-        });
 
 
     }

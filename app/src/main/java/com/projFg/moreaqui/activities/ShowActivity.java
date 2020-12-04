@@ -62,8 +62,8 @@ public class ShowActivity extends AppCompatActivity {
         super.onCreate(savedInstancLocationEstate);
         setContentView(R.layout.activity_show);
 
-        fabAdicionar = (FloatingActionButton) findViewById(R.id.fabAdicionar);
-        list_imoveis = (ListView)findViewById(R.id.list_imoveis);
+        fabAdicionar = findViewById(R.id.fabAdicionar);
+        list_imoveis = findViewById(R.id.list_imoveis);
         menu = findViewById(R.id.menuBottomShow);
 
         setSupportActionBar(menu);
@@ -85,9 +85,6 @@ public class ShowActivity extends AppCompatActivity {
         list_imoveis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Object o = list_imoveis.getItemAtPosition(position);
-                String str = (String)o;
-                //Snackbar.make(view,str,Snackbar.LENGTH_SHORT).show();
                 final MenuImovelFragment bottomSheetAppBarFragment = new MenuImovelFragment();
                 Bundle bundle = new Bundle();
 
@@ -98,7 +95,8 @@ public class ShowActivity extends AppCompatActivity {
                 Log.v(config.DEBUG_SHOWACT,"Id do Imovel é:"+idImovel);
                 Log.v(config.DEBUG_SHOWACT,config.DEBUG_SEP);
                 bundle.putLong("id",idImovel);
-
+                bundle.putDouble("latitude",lista.get(position).LATITUDE);
+                bundle.putDouble("longitude",lista.get(position).LONGITUDE);
 
                 bottomSheetAppBarFragment.setArguments(bundle);
                 bottomSheetAppBarFragment.show(getSupportFragmentManager(), bottomSheetAppBarFragment.getTag());

@@ -21,6 +21,7 @@ import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.activities.InsertActivity;
 import com.projFg.moreaqui.activities.ShowActivity;
+import com.projFg.moreaqui.activities.ShowAddressesActivity;
 import com.projFg.moreaqui.config;
 
 /*
@@ -52,16 +53,29 @@ public class MenuImovelFragment extends BottomSheetDialogFragment  {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Bundle bundle = new Bundle();
+                Bundle bundle;
                 bundle = getArguments();
                 ImovelDAO imDao = new ImovelDAO(getContext());
                 if(item.getTitle().equals(getString(R.string.txt_apagar))){
+                    //Botão de apagar imovel
                     Log.v(config.DEBUG_MENU_IMOVEL,"Removendo imovel id:"+bundle.getLong("id"));
+
                     imDao.removerImovel(bundle.getLong("id"));
                     Intent i = new Intent(getContext(),getActivity().getClass());
                     i.putExtra("insert",false);
                     i.putExtra("remove",true);
 
+                    startActivity(i);
+                    getActivity().finishAffinity();
+                    getActivity().overridePendingTransition(R.anim.res_anim_fadein, R.anim.res_anim_fadeout);
+                }else if(item.getTitle().equals(getString(R.string.txt_editar))){
+                    //Função do botão de editar o imovel
+
+                }else if(item.getTitle().equals(getString(R.string.btn_visualizar))){
+                    Intent i = new Intent(getActivity(),ShowAddressesActivity.class);
+                    i.putExtra("goTo",true);
+                    i.putExtra("latitude",bundle.getDouble("latitude"));
+                    i.putExtra("longitude",bundle.getDouble("longitude"));
                     startActivity(i);
                     getActivity().finishAffinity();
                     getActivity().overridePendingTransition(R.anim.res_anim_fadein, R.anim.res_anim_fadeout);

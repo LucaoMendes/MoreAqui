@@ -42,6 +42,8 @@ public class ImovelDAO {
 
     //CRUD OPERATIONS - Int enviada a classe CMD
     public final int CREATE_OP = config.CREATE_OP;
+
+    //Operações ainda não implementadas ( REMOTO )
     public final int READ_OP = config.READ_OP;
     public final int UPDATE_OP = config.UPDATE_OP;
     public final int DELETE_OP = config.DELETE_OP;
@@ -51,12 +53,14 @@ public class ImovelDAO {
         dataDb = new ImovelData(ctx, config.NOME_DB, config.VERSAO_DB);
     }
 
+    //Funções no banco de dados LOCAL
+
     public long inserirImovel(LocationEstate imovel) {
         ContentValues im = new ContentValues();
         im.put("PHONE", imovel.PHONE);
         im.put("TYPE", imovel.TYPE);
         im.put("SIZE", imovel.SIZE);
-        im.put("STATUS", imovel.STATUS.toString());
+        im.put("STATUS", imovel.STATUS);
         im.put("LATITUDE",imovel.LATITUDE);
         im.put("LONGITUDE",imovel.LONGITUDE);
 
@@ -117,8 +121,10 @@ public class ImovelDAO {
         db.close();
     }
 
+
+    //Funções do banco de dados REMOTO
     public void gravarImoveis() {
-        List<LocationEstate> list = new ArrayList<>();
+        List<LocationEstate> list;
         list = this.buscarImoveis();
         DaoImpl daoImpl = new DaoImpl();
         Invoker invok = new Invoker(config.HOST, config.PORT);
