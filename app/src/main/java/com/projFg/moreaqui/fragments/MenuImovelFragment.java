@@ -2,35 +2,27 @@ package com.projFg.moreaqui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
-import com.projFg.moreaqui.activities.InsertActivity;
-import com.projFg.moreaqui.activities.ShowActivity;
 import com.projFg.moreaqui.activities.ShowAddressesActivity;
 import com.projFg.moreaqui.config;
 
 /*
  * Grupo 11
- * Lucas Vinicius Silva Mendes
- * João Gabriel
- * Lucas Eduardo M de Amorim
- * Marcos Vinicius Silva
- * Igor Bezerra
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
  */
 
 public class MenuImovelFragment extends BottomSheetDialogFragment  {

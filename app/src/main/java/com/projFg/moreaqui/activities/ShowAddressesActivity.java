@@ -2,7 +2,6 @@ package com.projFg.moreaqui.activities;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -16,18 +15,25 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.model.LocationEstate;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowAddressesActivity extends FragmentActivity implements OnMapReadyCallback {
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
+ */
+
+public class ShowAddressesActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
     private final List<BitmapDescriptor> images = new ArrayList<>();

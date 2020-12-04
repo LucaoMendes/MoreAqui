@@ -1,12 +1,19 @@
 package com.projFg.moreaqui.server;
 
 import android.util.Log;
-
 import com.projFg.moreaqui.config;
-
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
+ */
 
 /**
  * This class implements the client side of a DAO. This DAO is general enough to

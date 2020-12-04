@@ -1,39 +1,26 @@
 package com.projFg.moreaqui.DAO;
 
-import android.Manifest;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
 import android.util.Log;
-
-/*
- * Grupo 11
- * Lucas Vinicius Silva Mendes
- * João Gabriel
- * Lucas Eduardo M de Amorim
- * Marcos Vinicius Silva
- * Igor Bezerra
- */
-
-import androidx.core.app.ActivityCompat;
-
 import com.projFg.moreaqui.config;
-import com.projFg.moreaqui.model.LocationEstate;
 import com.projFg.moreaqui.model.LocationEstate;
 import com.projFg.moreaqui.server.CMD;
 import com.projFg.moreaqui.server.DaoImpl;
 import com.projFg.moreaqui.server.Invoker;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static androidx.core.content.ContextCompat.getSystemService;
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
+ */
 
 public class ImovelDAO {
     private SQLiteDatabase db;

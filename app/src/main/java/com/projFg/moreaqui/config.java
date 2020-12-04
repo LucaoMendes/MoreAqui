@@ -1,5 +1,14 @@
 package com.projFg.moreaqui;
 
+/*
+ * Grupo 11
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
+ */
+
 public interface config {
     public final String DEBUG = "DEBUG";
     public final String DEBUG_INSERTACT = "DEBUG Insert Activity";

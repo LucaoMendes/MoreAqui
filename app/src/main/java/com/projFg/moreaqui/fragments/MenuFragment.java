@@ -6,23 +6,22 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.activities.MoreAqui5Activity;
 import com.projFg.moreaqui.activities.SobreActivity;
 
+
 /*
  * Grupo 11
- * Lucas Vinicius Silva Mendes
- * João Gabriel
- * Lucas Eduardo M de Amorim
- * Marcos Vinicius Silva
- * Igor Bezerra
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
  */
 
 public class MenuFragment extends BottomSheetDialogFragment {
