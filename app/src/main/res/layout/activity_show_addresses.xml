@@ -15,11 +15,44 @@
     tools:context=".activities.ShowAddressesActivity" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/homeFab"
+        android:id="@+id/fabSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:src="@drawable/exit"
+        app:fabSize="mini"
+        app:layout_anchorGravity="center" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:src="@drawable/add"
+        app:fabSize="mini"
+        app:layout_anchorGravity="center" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:src="@drawable/home"
+        app:fabSize="mini"
+        app:layout_anchorGravity="center" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="20dp"
         android:clickable="true"
-        android:src="@drawable/home" />
+        android:src="@drawable/add" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

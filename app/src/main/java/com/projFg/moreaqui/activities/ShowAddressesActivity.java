@@ -1,12 +1,24 @@
 package com.projFg.moreaqui.activities;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -18,6 +30,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.model.LocationEstate;
@@ -33,11 +46,12 @@ import java.util.List;
  * Igor Bezerra Borges de Lima - Mat. 202005035
  */
 
-public class ShowAddressesActivity extends FragmentActivity implements OnMapReadyCallback{
+public class ShowAddressesActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
     private final List<BitmapDescriptor> images = new ArrayList<>();
-
+    private FloatingActionButton fabMenu,fabAdd,fabHome,fabSair;
+    boolean fabOpen = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +62,82 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        fabMenu = findViewById(R.id.fabMenu);
+        fabHome = findViewById(R.id.fabHome);
+        fabAdd = findViewById(R.id.fabAdd);
+        fabSair = findViewById(R.id.fabSair);
+
+        fabMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fabAnimar();
+            }
+        });
+
+    }
+
+    public void fabAnimar(){
+        float rotationMenu = fabMenu.getRotation();
+        float rotationMiniFabs;
+
+        float yAdd = fabAdd.getTranslationY();
+        float yHome = fabHome.getTranslationY();
+        float ySair = fabSair.getTranslationY();
+
+
+        if(rotationMenu == 225){
+            fabOpen = true;
+            rotationMenu = 0;
+            rotationMiniFabs = 0;
+            yAdd += 180;
+            yHome += 340;
+            ySair += 500;
+        }else{
+            fabOpen=false;
+            rotationMenu = 225;
+            rotationMiniFabs = 360;
+            yAdd -= 180;
+            yHome -= 340;
+            ySair -=  500;
+        }
+
+
+        fabAdd.animate().translationY(yAdd).rotation(rotationMiniFabs).setDuration(500);
+        fabHome.animate().translationY(yHome).rotation(rotationMiniFabs).setDuration(500);
+        fabSair.animate().translationY(ySair).rotation(rotationMiniFabs).setDuration(500);
+
+        fabMenu.animate().rotation(rotationMenu).setDuration(500).setListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                fabMenu.setClickable(false);
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                fabMenu.setClickable(true);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, MoreAqui5Activity.class));
-        finishAffinity();
+        if(fabOpen){
+            fabAnimar();
+        }else{
+            startActivity(new Intent(this, ShowActivity.class));
+            finishAffinity();
+        }
+
     }
 
     @Override
@@ -102,16 +186,25 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
 
             mMap.clear();
             for (LocationEstate imovel:lista) {
+
                 LatLng pos= new LatLng(imovel.LATITUDE,imovel.LONGITUDE);
                 Marker iMark = mMap.addMarker(new MarkerOptions().position(pos));
-                iMark.setTitle(getString(R.string.txt_infoImovel) + imovel.TYPE);
-                iMark.setSnippet(getString(R.string.txt_infoImovelContato)+ imovel.PHONE +"\n" + getString(R.string.txt_tamanho) + imovel.SIZE);
+                iMark.setTitle(getString(R.string.txt_infoImovelContato) + imovel.PHONE);
+                iMark.setSnippet(getString(R.string.txt_infoImovel)+ imovel.TYPE);
                 iMark.setIcon(images.get(0));
-
-                //groundOverlay = mMap.addGroundOverlay(
-                //        new GroundOverlayOptions().image(images.get(0)).position(pos,3600f));
+                iMark.setTag(imovel);
 
             }
         }
+        mMap.setOnMarkerClickListener(this);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        //Quando clicar no item
+
+
+        return false;
+
     }
 }
