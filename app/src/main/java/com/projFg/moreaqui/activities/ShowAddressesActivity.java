@@ -51,7 +51,7 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
     private GoogleMap mMap;
     private final List<BitmapDescriptor> images = new ArrayList<>();
     private FloatingActionButton fabMenu,fabAdd,fabHome,fabSair;
-    boolean fabOpen = false;
+    boolean fabOpen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,29 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
                 fabAnimar();
             }
         });
+        fabHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), MoreAqui5Activity.class));
+                finishAffinity();
+
+            }
+        });
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), InsertActivity.class));
+                finishAffinity();
+            }
+        });
+        fabSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                System.exit(0);
+
+            }
+        });
 
     }
 
@@ -86,14 +109,14 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
 
 
         if(rotationMenu == 225){
-            fabOpen = true;
+            fabOpen = false;
             rotationMenu = 0;
             rotationMiniFabs = 0;
             yAdd += 180;
             yHome += 340;
             ySair += 500;
         }else{
-            fabOpen=false;
+            fabOpen=true;
             rotationMenu = 225;
             rotationMiniFabs = 360;
             yAdd -= 180;
