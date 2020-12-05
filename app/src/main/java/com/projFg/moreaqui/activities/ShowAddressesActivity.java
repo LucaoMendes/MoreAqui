@@ -103,41 +103,43 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
         float rotationMenu = fabMenu.getRotation();
         float rotationMiniFabs;
 
-        float yAdd = fabAdd.getTranslationY();
-        float yHome = fabHome.getTranslationY();
-        float ySair = fabSair.getTranslationY();
 
 
         if(rotationMenu == 225){
             fabOpen = false;
             rotationMenu = 0;
             rotationMiniFabs = 0;
-            yAdd += 180;
-            yHome += 340;
-            ySair += 500;
+            fabAdd.animate().translationY(0).rotation(rotationMiniFabs).setDuration(500);
+            fabHome.animate().translationY(0).rotation(rotationMiniFabs).setDuration(500);
+            fabSair.animate().translationY(0).rotation(rotationMiniFabs).setDuration(500);
         }else{
             fabOpen=true;
             rotationMenu = 225;
             rotationMiniFabs = 360;
-            yAdd -= 180;
-            yHome -= 340;
-            ySair -=  500;
+            fabAdd.animate().translationY(-getResources().getDimension(R.dimen.dimenFab1)).rotation(rotationMiniFabs).setDuration(500);
+            fabHome.animate().translationY(-getResources().getDimension(R.dimen.dimenFab2)).rotation(rotationMiniFabs).setDuration(500);
+            fabSair.animate().translationY(-getResources().getDimension(R.dimen.dimenFab3)).rotation(rotationMiniFabs).setDuration(500);
         }
-
-
-        fabAdd.animate().translationY(yAdd).rotation(rotationMiniFabs).setDuration(500);
-        fabHome.animate().translationY(yHome).rotation(rotationMiniFabs).setDuration(500);
-        fabSair.animate().translationY(ySair).rotation(rotationMiniFabs).setDuration(500);
 
         fabMenu.animate().rotation(rotationMenu).setDuration(500).setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
                 fabMenu.setClickable(false);
+                fabAdd.setClickable(false);
+                fabHome.setClickable(false);
+                fabSair.setClickable(false);
+
+
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 fabMenu.setClickable(true);
+                if(fabOpen){
+                    fabAdd.setClickable(true);
+                    fabHome.setClickable(true);
+                    fabSair.setClickable(true);
+                }
             }
 
             @Override
@@ -226,6 +228,7 @@ public class ShowAddressesActivity extends FragmentActivity implements OnMapRead
     public boolean onMarkerClick(Marker marker) {
         //Quando clicar no item
 
+        
 
         return false;
 

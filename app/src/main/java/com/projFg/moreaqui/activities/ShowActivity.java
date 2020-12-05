@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -14,6 +13,7 @@ import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.projFg.moreaqui.DAO.ImovelDAO;
 import com.projFg.moreaqui.R;
+import com.projFg.moreaqui.activities.adapter.ListAdapter;
 import com.projFg.moreaqui.config;
 import com.projFg.moreaqui.fragments.MenuFragment;
 import com.projFg.moreaqui.fragments.MenuImovelFragment;
@@ -40,8 +40,8 @@ public class ShowActivity extends AppCompatActivity {
 
     //Inicialização de variaveis
     ListView list_imoveis;
-    List<LocationEstate> lista;
-    ArrayAdapter<String> adapter;
+    List<LocationEstate> ImoveisRecebidos;
+    ListAdapter adapter;
     FloatingActionButton fabAdicionar;
     BottomAppBar menu,menuImovel;
 
@@ -92,8 +92,8 @@ public class ShowActivity extends AppCompatActivity {
                 Log.v(config.DEBUG_SHOWACT,"Id do Imovel é:"+idImovel);
                 Log.v(config.DEBUG_SHOWACT,config.DEBUG_SEP);
                 bundle.putLong("id",idImovel);
-                bundle.putDouble("latitude",lista.get(position).LATITUDE);
-                bundle.putDouble("longitude",lista.get(position).LONGITUDE);
+                bundle.putDouble("latitude", ImoveisRecebidos.get(position).LATITUDE);
+                bundle.putDouble("longitude", ImoveisRecebidos.get(position).LONGITUDE);
 
                 bottomSheetAppBarFragment.setArguments(bundle);
                 bottomSheetAppBarFragment.show(getSupportFragmentManager(), bottomSheetAppBarFragment.getTag());
@@ -120,20 +120,15 @@ public class ShowActivity extends AppCompatActivity {
             msgDeletar.show();
         }
 
-        lista = new ArrayList<>();
+        ImoveisRecebidos = new ArrayList<>();
 
         try{
-            lista = imovelDAO.buscarImoveis();
-            List<String> ImoveisRecebidos = new ArrayList<>();
+            ImoveisRecebidos = imovelDAO.buscarImoveis();
 
-            //Log.v("DEBUG BD",lista.get(1).emConstrucaoImovel.toString());
-
-            //Criação da lista
-            for (LocationEstate im:lista) {
-                ImoveisRecebidos.add(im.toString());
-            }
-            adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);
+//            adapter = new ArrayAdapter<>(ShowActivity.this,android.R.layout.simple_list_item_1, ImoveisRecebidos);
+            adapter = new ListAdapter(ImoveisRecebidos,this);
             list_imoveis.setAdapter(adapter);
+            Log.v(config.DEBUG_SHOWACT,"ADAPTER ADICIONADO");
         }catch(Exception e){
             Log.v(config.DEBUG_EXCEPTION ,e.toString());
         }

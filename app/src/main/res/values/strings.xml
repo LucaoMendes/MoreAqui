@@ -26,6 +26,12 @@
     <string name="txt_construcao">Em Construção</string>
     <string name="txt_pronto">Pronto</string>
 
+    <string name="txt_lojaVenda">Loja a Venda</string>
+    <string name="txt_casaVenda">Casa a Venda</string>
+    <string name="txt_apartamentoVenda">Apartamento a Venda</string>
+    <string name="txt_cliqueMais">Clique para saber mais</string>
+
+
 
     <string name="txt_menu">Menu</string>
 
