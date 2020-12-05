@@ -14,6 +14,7 @@ Aplicação para venda e compra de Imoveis
 ### ⌨️Desenvolvimento
 
 <!--ts-->
+   * [Sobre](#sobre)
    * [⌨️Desenvolvimento](#desenvolvimento)
    * [✨Features](#features)
    * [📦Fases](#fases)
@@ -22,7 +23,20 @@ Aplicação para venda e compra de Imoveis
      * [Fase 3](#fase-3)
      * [Fase 4](#fase-4)
      * [Fase 5](#fase-5)
+   
 <!--te-->
+### Sobre
+
+Projeto iniciado com objetivo acadêmico para cadeira de Desenvolvimento para dispositivos móveis, UniFG Recife-PE <br>
+Grupo 11 <br>
+GitHub:https://github.com/LucaoMendes/MoreAqui <br>
+Trello:https://trello.com/b/XstseyJW/moreaqui <br>
+Desenvolvedores: <br>
+Lucas Vinicius Silva Mendes - Mat. 201806442 <br>
+João Gabriel da Silva - Mat. 201805070 <br>
+Lucas Eduardo M de Amorim - Mat. 201708075 <br>
+Marcos Vinicius Silva - Mat. 201900939 <br>
+Igor Bezerra Borges de Lima - Mat. 202005035
 
 ### ✨Features
 
