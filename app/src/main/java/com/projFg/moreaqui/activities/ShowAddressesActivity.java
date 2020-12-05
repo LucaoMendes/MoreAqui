@@ -1,24 +1,14 @@
 package com.projFg.moreaqui.activities;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
-import android.animation.TimeInterpolator;
-import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -37,8 +27,10 @@ import com.projFg.moreaqui.model.LocationEstate;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
+/**
  * Grupo 11
+ * GitHub:https://github.com/LucaoMendes/MoreAqui
+ * Trello:https://trello.com/b/XstseyJW/moreaqui
  * Lucas Vinicius Silva Mendes - Mat. 201806442
  * João Gabriel da Silva - Mat. 201805070
  * Lucas Eduardo M de Amorim - Mat. 201708075

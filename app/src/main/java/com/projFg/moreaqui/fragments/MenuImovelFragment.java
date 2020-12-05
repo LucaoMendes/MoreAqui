@@ -16,8 +16,10 @@ import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.activities.ShowAddressesActivity;
 import com.projFg.moreaqui.config;
 
-/*
+/**
  * Grupo 11
+ * GitHub:https://github.com/LucaoMendes/MoreAqui
+ * Trello:https://trello.com/b/XstseyJW/moreaqui
  * Lucas Vinicius Silva Mendes - Mat. 201806442
  * João Gabriel da Silva - Mat. 201805070
  * Lucas Eduardo M de Amorim - Mat. 201708075

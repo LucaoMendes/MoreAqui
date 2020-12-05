@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/*
+/**
  * Grupo 11
+ * GitHub:https://github.com/LucaoMendes/MoreAqui
+ * Trello:https://trello.com/b/XstseyJW/moreaqui
  * Lucas Vinicius Silva Mendes - Mat. 201806442
  * João Gabriel da Silva - Mat. 201805070
  * Lucas Eduardo M de Amorim - Mat. 201708075
@@ -33,10 +35,6 @@ import java.util.List;
 
 
 public class ShowActivity extends AppCompatActivity {
-    /*
-    * Inicio Fase 2
-    */
-
 
     //Inicialização de variaveis
     ListView list_imoveis;

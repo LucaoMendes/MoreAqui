@@ -1,25 +1,26 @@
 package com.projFg.moreaqui.activities.adapter;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.res.Resources;
-import android.location.Location;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-
 import com.projFg.moreaqui.R;
 import com.projFg.moreaqui.model.LocationEstate;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
+
+/**
+ * Grupo 11
+ * GitHub:https://github.com/LucaoMendes/MoreAqui
+ * Trello:https://trello.com/b/XstseyJW/moreaqui
+ * Lucas Vinicius Silva Mendes - Mat. 201806442
+ * João Gabriel da Silva - Mat. 201805070
+ * Lucas Eduardo M de Amorim - Mat. 201708075
+ * Marcos Vinicius Silva - Mat. 201900939
+ * Igor Bezerra Borges de Lima - Mat. 202005035
+ */
+
 
 public class ListAdapter extends BaseAdapter {
     private final List<LocationEstate> lista_imoveis;
@@ -48,7 +49,6 @@ public class ListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = activity.getLayoutInflater().inflate(R.layout.imoveis_fragment,parent,false);
         LocationEstate imovel = lista_imoveis.get(position);
-        Log.v("DEBUG LIST ADAPTER","\n"+imovel.toString());
         TextView infoImovel = v.findViewById(R.id.txt_infoImovel);
         TextView telefone = v.findViewById(R.id.txt_telefoneImovel);
         TextView tamanho = v.findViewById(R.id.txt_tamanhoImovel);
