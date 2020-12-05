@@ -15,9 +15,9 @@ Aplicação para venda e compra de Imoveis
 
 <!--ts-->
    * [Sobre](#sobre)
-   * [⌨️Desenvolvimento](#desenvolvimento)
-   * [✨Features](#features)
-   * [📦Fases](#fases)
+   * [⌨️Desenvolvimento](#⌨️desenvolvimento)
+   * [✨Features](#✨features)
+   * [📦Fases](#📦fases)
      * [Fase 1](#fase-1)
      * [Fase 2](#fase-2)
      * [Fase 3](#fase-3)
