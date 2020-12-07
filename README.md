@@ -5,7 +5,7 @@
 Aplicação para venda e compra de Imoveis
 <br>
 
-<img src="https://img.shields.io/static/v1?label=APP&message=moreaqui&color=blue&style=for-the-badge&logo=bilibili"/>
+<a href="https://github.com/LucaoMendes/MoreAqui/releases/tag/v0.1-alpha"><img src="https://img.shields.io/static/v1?label=v0.1-alpha&message=moreaqui&color=blue&style=for-the-badge&logo=bilibili"/></a>
 <h4 align="center"> 
 	🚧  Projeto Finalizado Academicamente ⌨️ Projeto continuará em desenvolvimento...  🚧
 </h4></p>
